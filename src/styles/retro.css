@@ -1,0 +1,396 @@
+/* Retro UI Components & Utilities */
+
+/* Window Frame */
+.window {
+  background: linear-gradient(180deg, #E0E0E0 0%, #CCCCCC 100%);
+  border: 4px solid;
+  border-color: #FFFFFF #000000 #000000 #FFFFFF;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 0;
+}
+
+/* Panel / Container */
+.panel {
+  background: #E0E0E0;
+  border: 3px solid;
+  border-color: #FFFFFF #000000 #000000 #FFFFFF;
+  padding: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Pressed State */
+.btn-pressed {
+  border-color: #000000 #FFFFFF #FFFFFF #000000;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+  transform: translateY(2px);
+}
+
+/* Button Raised State */
+.btn-raised {
+  border-color: #FFFFFF #000000 #000000 #FFFFFF;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Divider */
+.divider {
+  border: none;
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #808080;
+  height: 2px;
+  margin: 8px 0;
+}
+
+/* Separator (vertical) */
+.separator-v {
+  border: none;
+  border-left: 1px solid #FFFFFF;
+  border-right: 1px solid #808080;
+  width: 2px;
+  display: inline-block;
+  margin: 0 8px;
+}
+
+/* Status Bar */
+.statusbar {
+  background: linear-gradient(180deg, #E0E0E0 0%, #CCCCCC 100%);
+  border-top: 2px solid #FFFFFF;
+  border-right: 2px solid #808080;
+  border-bottom: 2px solid #808080;
+  border-left: 2px solid #FFFFFF;
+  padding: 2px 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.9rem;
+}
+
+.statusbar-item {
+  flex: 1;
+  padding: 2px 4px;
+  border-right: 1px solid #808080;
+  border-bottom: 1px solid #808080;
+  border-top: 1px solid #FFFFFF;
+  border-left: 1px solid #FFFFFF;
+  background: linear-gradient(180deg, #E8E8E8 0%, #D8D8D8 100%);
+}
+
+.statusbar-item:last-child {
+  border-right: none;
+}
+
+/* Inset Text (recessed) */
+.inset {
+  background: #FFFFFF;
+  border: 2px solid;
+  border-color: #808080 #FFFFFF #FFFFFF #808080;
+  padding: 4px;
+  color: #000000;
+}
+
+/* Outset */
+.outset {
+  border: 2px solid;
+  border-color: #FFFFFF #808080 #808080 #FFFFFF;
+  padding: 4px;
+}
+
+/* Toggle Button */
+.toggle-btn {
+  background: linear-gradient(180deg, #E0E0E0 0%, #CCCCCC 100%);
+  border: 2px solid;
+  border-color: #FFFFFF #000000 #000000 #FFFFFF;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  font-family: 'VT323', monospace;
+  cursor: pointer;
+  user-select: none;
+  min-width: 50px;
+  text-align: center;
+}
+
+.toggle-btn.active {
+  border-color: #000000 #FFFFFF #FFFFFF #000000;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Checkbox */
+.checkbox {
+  width: 16px;
+  height: 16px;
+  border: 2px solid;
+  border-color: #808080 #FFFFFF #FFFFFF #808080;
+  background: #FFFFFF;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  position: relative;
+}
+
+.checkbox input {
+  display: none;
+}
+
+.checkbox input:checked + .checkmark::before {
+  content: '✓';
+  color: #000000;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.checkmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Radio Button */
+.radio {
+  width: 16px;
+  height: 16px;
+  border: 2px solid;
+  border-color: #808080 #FFFFFF #FFFFFF #808080;
+  background: #FFFFFF;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.radio input {
+  display: none;
+}
+
+.radio input:checked + .radio-dot {
+  width: 6px;
+  height: 6px;
+  background: #000000;
+  border-radius: 50%;
+}
+
+.radio-dot {
+  width: 0;
+  height: 0;
+  background: transparent;
+  border-radius: 50%;
+  transition: all 0.1s ease;
+}
+
+/* Text Input */
+.textinput {
+  background: #FFFFFF;
+  border: 2px solid;
+  border-color: #808080 #FFFFFF #FFFFFF #808080;
+  padding: 4px 6px;
+  font-family: 'VT323', monospace;
+  font-size: 0.95rem;
+  color: #000000;
+}
+
+.textinput:focus {
+  outline: none;
+  border-color: #D7B377;
+  box-shadow: 0 0 4px #D7B377;
+}
+
+.textinput:disabled {
+  background: #CCCCCC;
+  color: #808080;
+}
+
+/* Dropdown / Select */
+.select {
+  background: #FFFFFF;
+  border: 2px solid;
+  border-color: #808080 #FFFFFF #FFFFFF #808080;
+  padding: 4px 6px;
+  font-family: 'VT323', monospace;
+  font-size: 0.95rem;
+  color: #000000;
+  cursor: pointer;
+}
+
+.select:focus {
+  outline: none;
+  border-color: #D7B377;
+}
+
+/* Scrollbar Container */
+.scrollable {
+  overflow-y: auto;
+  position: relative;
+}
+
+.scrollable::-webkit-scrollbar {
+  width: 16px;
+}
+
+.scrollable::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, #E0E0E0 0%, #CCCCCC 100%);
+  border: 2px solid;
+  border-color: #FFFFFF #000000 #000000 #FFFFFF;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #E0E0E0 0%, #CCCCCC 100%);
+  border: 2px solid;
+  border-color: #FFFFFF #000000 #000000 #FFFFFF;
+}
+
+.scrollable::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #E8E8E8 0%, #D4D4D4 100%);
+}
+
+/* Tooltip */
+.tooltip {
+  background: linear-gradient(180deg, #D7B377 0%, #D9B888 100%);
+  border: 2px solid #000000;
+  padding: 4px 8px;
+  font-size: 0.9rem;
+  color: #333333;
+  pointer-events: none;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Badge */
+.badge {
+  background: linear-gradient(180deg, #214F4B 0%, #235789 100%);
+  color: #FFFFFF;
+  padding: 4px 10px;
+  border: 2px solid #000000;
+  border-radius: 0;
+  font-size: 0.85rem;
+  font-weight: bold;
+  display: inline-block;
+}
+
+/* Alert Box */
+.alert {
+  background: linear-gradient(180deg, #D9B888 0%, #D7B377 100%);
+  border: 4px solid;
+  border-color: #FFFFFF #000000 #000000 #FFFFFF;
+  padding: 12px;
+  margin: 8px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.alert.success {
+  border-color: #FFFFFF #000000 #000000 #FFFFFF;
+}
+
+.alert.error {
+  background: linear-gradient(180deg, #E89999 0%, #D77777 100%);
+}
+
+.alert.warning {
+  background: linear-gradient(180deg, #F5D77D 0%, #ECC65B 100%);
+}
+
+.alert.info {
+  background: linear-gradient(180deg, #ADD9F4 0%, #8BC3E6 100%);
+}
+
+/* Progress Bar */
+.progressbar {
+  background: linear-gradient(180deg, #E0E0E0 0%, #CCCCCC 100%);
+  border: 2px solid;
+  border-color: #FFFFFF #000000 #000000 #FFFFFF;
+  height: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progressbar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #214F4B 0%, #235789 100%);
+  transition: width 0.3s ease;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* Tabbed Interface */
+.tabs {
+  display: flex;
+  background: #E0E0E0;
+  border-bottom: 3px solid #000000;
+}
+
+.tab-item {
+  background: linear-gradient(180deg, #E0E0E0 0%, #CCCCCC 100%);
+  border: 2px solid #CCCCCC;
+  border-bottom: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-right: 2px solid #000000;
+  transition: all 0.1s ease;
+}
+
+.tab-item:last-child {
+  border-right: none;
+}
+
+.tab-item.active {
+  background: linear-gradient(180deg, #D9B888 0%, #D7B377 100%);
+  border-color: #FFFFFF #000000 #000000 #FFFFFF;
+}
+
+/* Toolbar */
+.toolbar {
+  background: linear-gradient(180deg, #E0E0E0 0%, #CCCCCC 100%);
+  border-bottom: 2px solid #000000;
+  padding: 4px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.toolbar-separator {
+  width: 1px;
+  height: 24px;
+  background: linear-gradient(90deg, #FFFFFF 0%, #808080 100%);
+  margin: 0 4px;
+}
+
+/* Menu */
+.menu {
+  background: linear-gradient(180deg, #E0E0E0 0%, #CCCCCC 100%);
+  border: 2px solid;
+  border-color: #FFFFFF #000000 #000000 #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+}
+
+.menu-item {
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all 0.05s ease;
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  font-family: 'VT323', monospace;
+  font-size: 0.95rem;
+  color: #000000;
+}
+
+.menu-item:hover {
+  background: linear-gradient(90deg, #214F4B 0%, #235789 100%);
+  color: #FFFFFF;
+}
+
+.menu-item:active {
+  background: linear-gradient(90deg, #235789 0%, #214F4B 100%);
+}
+
+.menu-separator {
+  height: 2px;
+  background: linear-gradient(90deg, #FFFFFF 0%, #808080 100%);
+  margin: 4px 0;
+  border: none;
+}

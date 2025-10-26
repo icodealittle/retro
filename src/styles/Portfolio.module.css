@@ -1,0 +1,262 @@
+.portfolioContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #214F4B;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+  font-family: 'VT323', monospace;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #235789;
+  font-family: 'VT323', monospace;
+  margin-bottom: 1.5rem;
+}
+
+.reconstructionNotice {
+  background: linear-gradient(135deg, #FFE4B5 0%, #FFD700 100%);
+  border: 2px solid #214F4B;
+  padding: 1rem;
+  margin-top: 1rem;
+  font-family: 'VT323', monospace;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #333333;
+}
+
+.reconstructionNotice p {
+  margin: 0.3rem 0;
+}
+
+/* Project Grid */
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Project Card */
+.projectCard {
+  background: rgba(255, 255, 255, 0.95);
+  border: 3px solid;
+  border-color: #FFFFFF #000000 #000000 #FFFFFF;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+.projectCard:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 1);
+}
+
+.projectCard.active {
+  background: linear-gradient(135deg, #D9B888 0%, #D7B377 100%);
+  border-color: #214F4B;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  font-size: 2rem;
+}
+
+.year {
+  font-size: 0.75rem;
+  background: #214F4B;
+  color: #FFFFFF;
+  padding: 0.3rem 0.6rem;
+  font-family: 'VT323', monospace;
+  border-radius: 2px;
+}
+
+.projectTitle {
+  font-size: 1.2rem;
+  color: #214F4B;
+  margin-bottom: 0.5rem;
+  font-family: 'VT323', monospace;
+  line-height: 1.4;
+}
+
+.role {
+  font-size: 0.9rem;
+  color: #235789;
+  font-family: 'VT323', monospace;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.expandedContent {
+  animation: slideDown 0.3s ease;
+}
+
+.brief {
+  font-size: 0.9rem;
+  color: #333333;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-family: 'VT323', monospace;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.tag {
+  display: inline-block;
+  background: #214F4B;
+  color: #FFFFFF;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.75rem;
+  font-family: 'VT323', monospace;
+  border-radius: 2px;
+  border: 1px solid #333333;
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  font-family: 'VT323', monospace;
+  color: #214F4B;
+}
+
+.techStack strong {
+  width: 100%;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+.tech {
+  display: inline-block;
+  background: #ADD9F4;
+  color: #214F4B;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid #214F4B;
+  border-radius: 2px;
+  font-size: 0.8rem;
+}
+
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #ADD9F4 0%, #ADD9F4 100%);
+  border: 2px solid #214F4B;
+  font-family: 'VT323', monospace;
+  color: #214F4B;
+  font-size: 0.9rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+
+  to {
+    opacity: 1;
+    max-height: 500px;
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .projectGrid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolioContainer {
+    padding: 2rem 1rem;
+  }
+
+  .projectGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .projectCard {
+    min-height: 160px;
+    padding: 1rem;
+  }
+
+  .projectTitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolioContainer {
+    padding: 1.5rem 1rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .projectCard {
+    min-height: auto;
+    padding: 0.8rem;
+  }
+
+  .icon {
+    font-size: 1.5rem;
+  }
+
+  .projectTitle {
+    font-size: 0.9rem;
+  }
+
+  .brief {
+    font-size: 0.8rem;
+  }
+}

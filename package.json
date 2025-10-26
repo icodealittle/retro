@@ -1,0 +1,24 @@
+{
+  "name": "alexos95-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "AlexOS 95 - A retro-inspired interactive portfolio",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.16",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.4",
+    "typescript": "~5.9.3",
+    "vite": "^7.1.7"
+  }
+}
