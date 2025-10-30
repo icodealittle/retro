@@ -1,396 +1,319 @@
-/* Retro UI Components & Utilities */
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
 
-/* Window Frame */
-.window {
-  background: linear-gradient(180deg, #E0E0E0 0%, #CCCCCC 100%);
-  border: 4px solid;
-  border-color: #FFFFFF #000000 #000000 #FFFFFF;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  border-radius: 0;
+  to {
+    opacity: 1;
+  }
 }
 
-/* Panel / Container */
-.panel {
-  background: #E0E0E0;
-  border: 3px solid;
-  border-color: #FFFFFF #000000 #000000 #FFFFFF;
-  padding: 12px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Button Pressed State */
-.btn-pressed {
-  border-color: #000000 #FFFFFF #FFFFFF #000000;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
-  transform: translateY(2px);
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Button Raised State */
-.btn-raised {
-  border-color: #FFFFFF #000000 #000000 #FFFFFF;
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-/* Divider */
-.divider {
-  border: none;
-  border-top: 1px solid #FFFFFF;
-  border-bottom: 1px solid #808080;
-  height: 2px;
-  margin: 8px 0;
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-/* Separator (vertical) */
-.separator-v {
-  border: none;
-  border-left: 1px solid #FFFFFF;
-  border-right: 1px solid #808080;
-  width: 2px;
-  display: inline-block;
-  margin: 0 8px;
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
 }
 
-/* Status Bar */
-.statusbar {
-  background: linear-gradient(180deg, #E0E0E0 0%, #CCCCCC 100%);
-  border-top: 2px solid #FFFFFF;
-  border-right: 2px solid #808080;
-  border-bottom: 2px solid #808080;
-  border-left: 2px solid #FFFFFF;
-  padding: 2px 4px;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 0.9rem;
+@keyframes glitch {
+
+  0%,
+  100% {
+    text-shadow:
+      2px 0 #ff00ff,
+      -2px 0 #00ffff;
+  }
+
+  25% {
+    text-shadow:
+      -2px 0 #ff00ff,
+      2px 0 #00ffff;
+  }
+
+  50% {
+    text-shadow:
+      2px 2px #ff00ff,
+      -2px -2px #00ffff;
+  }
+
+  75% {
+    text-shadow:
+      -2px 2px #ff00ff,
+      2px -2px #00ffff;
+  }
 }
 
-.statusbar-item {
-  flex: 1;
-  padding: 2px 4px;
-  border-right: 1px solid #808080;
-  border-bottom: 1px solid #808080;
-  border-top: 1px solid #FFFFFF;
-  border-left: 1px solid #FFFFFF;
-  background: linear-gradient(180deg, #E8E8E8 0%, #D8D8D8 100%);
+@keyframes blink {
+
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
 }
 
-.statusbar-item:last-child {
-  border-right: none;
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100vh);
+  }
 }
 
-/* Inset Text (recessed) */
-.inset {
-  background: #FFFFFF;
-  border: 2px solid;
-  border-color: #808080 #FFFFFF #FFFFFF #808080;
-  padding: 4px;
-  color: #000000;
+/* Retro Effects */
+.retro-shadow {
+  box-shadow:
+    4px 4px 0 rgba(0, 0, 0, 0.2),
+    8px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
-/* Outset */
-.outset {
-  border: 2px solid;
-  border-color: #FFFFFF #808080 #808080 #FFFFFF;
-  padding: 4px;
+.retro-hover:hover {
+  transform: translate(-2px, -2px);
+  box-shadow:
+    6px 6px 0 rgba(0, 0, 0, 0.2),
+    10px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
-/* Toggle Button */
-.toggle-btn {
-  background: linear-gradient(180deg, #E0E0E0 0%, #CCCCCC 100%);
-  border: 2px solid;
-  border-color: #FFFFFF #000000 #000000 #FFFFFF;
-  padding: 6px 12px;
-  font-size: 0.9rem;
-  font-family: 'VT323', monospace;
-  cursor: pointer;
-  user-select: none;
-  min-width: 50px;
-  text-align: center;
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
 }
 
-.toggle-btn.active {
-  border-color: #000000 #FFFFFF #FFFFFF #000000;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
-}
-
-/* Checkbox */
-.checkbox {
-  width: 16px;
-  height: 16px;
-  border: 2px solid;
-  border-color: #808080 #FFFFFF #FFFFFF #808080;
-  background: #FFFFFF;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  vertical-align: middle;
-  position: relative;
-}
-
-.checkbox input {
-  display: none;
-}
-
-.checkbox input:checked + .checkmark::before {
-  content: '✓';
-  color: #000000;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.checkmark {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.scanlines::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-}
-
-/* Radio Button */
-.radio {
-  width: 16px;
-  height: 16px;
-  border: 2px solid;
-  border-color: #808080 #FFFFFF #FFFFFF #808080;
-  background: #FFFFFF;
-  border-radius: 50%;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  vertical-align: middle;
-}
-
-.radio input {
-  display: none;
-}
-
-.radio input:checked + .radio-dot {
-  width: 6px;
-  height: 6px;
-  background: #000000;
-  border-radius: 50%;
-}
-
-.radio-dot {
-  width: 0;
-  height: 0;
-  background: transparent;
-  border-radius: 50%;
-  transition: all 0.1s ease;
-}
-
-/* Text Input */
-.textinput {
-  background: #FFFFFF;
-  border: 2px solid;
-  border-color: #808080 #FFFFFF #FFFFFF #808080;
-  padding: 4px 6px;
-  font-family: 'VT323', monospace;
-  font-size: 0.95rem;
-  color: #000000;
-}
-
-.textinput:focus {
-  outline: none;
-  border-color: #D7B377;
-  box-shadow: 0 0 4px #D7B377;
-}
-
-.textinput:disabled {
-  background: #CCCCCC;
-  color: #808080;
-}
-
-/* Dropdown / Select */
-.select {
-  background: #FFFFFF;
-  border: 2px solid;
-  border-color: #808080 #FFFFFF #FFFFFF #808080;
-  padding: 4px 6px;
-  font-family: 'VT323', monospace;
-  font-size: 0.95rem;
-  color: #000000;
-  cursor: pointer;
-}
-
-.select:focus {
-  outline: none;
-  border-color: #D7B377;
-}
-
-/* Scrollbar Container */
-.scrollable {
-  overflow-y: auto;
-  position: relative;
-}
-
-.scrollable::-webkit-scrollbar {
-  width: 16px;
-}
-
-.scrollable::-webkit-scrollbar-track {
-  background: linear-gradient(180deg, #E0E0E0 0%, #CCCCCC 100%);
-  border: 2px solid;
-  border-color: #FFFFFF #000000 #000000 #FFFFFF;
-}
-
-.scrollable::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #E0E0E0 0%, #CCCCCC 100%);
-  border: 2px solid;
-  border-color: #FFFFFF #000000 #000000 #FFFFFF;
-}
-
-.scrollable::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #E8E8E8 0%, #D4D4D4 100%);
-}
-
-/* Tooltip */
-.tooltip {
-  background: linear-gradient(180deg, #D7B377 0%, #D9B888 100%);
-  border: 2px solid #000000;
-  padding: 4px 8px;
-  font-size: 0.9rem;
-  color: #333333;
+  background: repeating-linear-gradient(0deg,
+      rgba(0, 0, 0, 0.05),
+      rgba(0, 0, 0, 0.05) 1px,
+      transparent 1px,
+      transparent 2px);
   pointer-events: none;
-  z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
 }
 
-/* Badge */
-.badge {
-  background: linear-gradient(180deg, #214F4B 0%, #235789 100%);
-  color: #FFFFFF;
-  padding: 4px 10px;
-  border: 2px solid #000000;
-  border-radius: 0;
-  font-size: 0.85rem;
-  font-weight: bold;
-  display: inline-block;
-}
-
-/* Alert Box */
-.alert {
-  background: linear-gradient(180deg, #D9B888 0%, #D7B377 100%);
-  border: 4px solid;
-  border-color: #FFFFFF #000000 #000000 #FFFFFF;
-  padding: 12px;
-  margin: 8px 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.alert.success {
-  border-color: #FFFFFF #000000 #000000 #FFFFFF;
-}
-
-.alert.error {
-  background: linear-gradient(180deg, #E89999 0%, #D77777 100%);
-}
-
-.alert.warning {
-  background: linear-gradient(180deg, #F5D77D 0%, #ECC65B 100%);
-}
-
-.alert.info {
-  background: linear-gradient(180deg, #ADD9F4 0%, #8BC3E6 100%);
-}
-
-/* Progress Bar */
-.progressbar {
-  background: linear-gradient(180deg, #E0E0E0 0%, #CCCCCC 100%);
-  border: 2px solid;
-  border-color: #FFFFFF #000000 #000000 #FFFFFF;
-  height: 20px;
+.crt-effect {
   position: relative;
-  overflow: hidden;
 }
 
-.progressbar-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #214F4B 0%, #235789 100%);
-  transition: width 0.3s ease;
-  border-right: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-/* Tabbed Interface */
-.tabs {
-  display: flex;
-  background: #E0E0E0;
-  border-bottom: 3px solid #000000;
-}
-
-.tab-item {
-  background: linear-gradient(180deg, #E0E0E0 0%, #CCCCCC 100%);
-  border: 2px solid #CCCCCC;
-  border-bottom: none;
-  padding: 8px 16px;
-  cursor: pointer;
-  border-right: 2px solid #000000;
-  transition: all 0.1s ease;
-}
-
-.tab-item:last-child {
-  border-right: none;
-}
-
-.tab-item.active {
-  background: linear-gradient(180deg, #D9B888 0%, #D7B377 100%);
-  border-color: #FFFFFF #000000 #000000 #FFFFFF;
-}
-
-/* Toolbar */
-.toolbar {
-  background: linear-gradient(180deg, #E0E0E0 0%, #CCCCCC 100%);
-  border-bottom: 2px solid #000000;
-  padding: 4px;
-  display: flex;
-  gap: 4px;
-  align-items: center;
-}
-
-.toolbar-separator {
-  width: 1px;
-  height: 24px;
-  background: linear-gradient(90deg, #FFFFFF 0%, #808080 100%);
-  margin: 0 4px;
-}
-
-/* Menu */
-.menu {
-  background: linear-gradient(180deg, #E0E0E0 0%, #CCCCCC 100%);
-  border: 2px solid;
-  border-color: #FFFFFF #000000 #000000 #FFFFFF;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  z-index: 1001;
-}
-
-.menu-item {
-  padding: 6px 12px;
-  cursor: pointer;
-  transition: all 0.05s ease;
-  display: block;
+.crt-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  text-align: left;
-  background: transparent;
-  border: none;
-  font-family: 'VT323', monospace;
-  font-size: 0.95rem;
-  color: #000000;
+  height: 100%;
+  background: radial-gradient(ellipse at center,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.05) 100%);
+  pointer-events: none;
 }
 
-.menu-item:hover {
-  background: linear-gradient(90deg, #214F4B 0%, #235789 100%);
-  color: #FFFFFF;
+/* Loading Animations */
+.loading-dots::after {
+  content: '.';
+  animation: dots 1.5s steps(4, end) infinite;
 }
 
-.menu-item:active {
-  background: linear-gradient(90deg, #235789 0%, #214F4B 100%);
+@keyframes dots {
+
+  0%,
+  20% {
+    content: '.';
+  }
+
+  40% {
+    content: '..';
+  }
+
+  60% {
+    content: '...';
+  }
+
+  80%,
+  100% {
+    content: '';
+  }
 }
 
-.menu-separator {
-  height: 2px;
-  background: linear-gradient(90deg, #FFFFFF 0%, #808080 100%);
-  margin: 4px 0;
-  border: none;
+/* Window Effects */
+.window-shake {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-5px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+/* Retro Button Press Effect */
+.button-press:active {
+  transform: translate(2px, 2px);
+  box-shadow: none !important;
+}
+
+/* Typewriter Effect */
+.typewriter {
+  overflow: hidden;
+  border-right: 3px solid;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.1em;
+  animation:
+    typing 3s steps(40, end),
+    blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: currentColor;
+  }
+}
+
+/* Utility Animation Classes */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.animate-slide-in-down {
+  animation: slideInDown 0.6s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-glitch {
+  animation: glitch 1s ease-in-out infinite;
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Delay Classes */
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-500 {
+  animation-delay: 0.5s;
 }

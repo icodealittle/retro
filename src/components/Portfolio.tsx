@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+// import { projectsData } from '../data/projectData';
 import styles from '../styles/Portfolio.module.css';
 
-interface Project {
+interface ProjectCard {
   id: string;
   title: string;
   year: string;
@@ -15,17 +17,8 @@ interface Project {
 const Portfolio: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
 
-  const projects: Project[] = [
-    {
-      id: 'alexos95',
-      title: 'Alex Chea: Retro Desktop Portfolio Redesign',
-      year: 'October 2025',
-      brief: 'Interactive Windows 95-inspired portfolio combining retro aesthetics with modern UX. Built with React, TypeScript, and Vite. Features sticky note resume widget and responsive design.',
-      role: 'Full-Stack Designer & Developer',
-      icon: '💻',
-      tags: ['Web Design', 'UX/UI', 'Frontend Development', 'Retro Design'],
-      techStack: ['React', 'TypeScript', 'Vite', 'CSS Modules', 'HTML5']
-    },
+  // Create brief summaries for portfolio cards
+  const projectCards: ProjectCard[] = [
     {
       id: 'figma',
       title: 'Figma: Prior Knowledge, Schemas, and Mental Models',
@@ -79,6 +72,16 @@ const Portfolio: React.FC = () => {
       role: 'Project Manager & UX Designer',
       icon: '🩹',
       tags: ['Medical Device', 'Patient Research', 'Human Factors', 'Sustainability']
+    },
+    {
+      id: 'alexos95',
+      title: 'AlexOS 95: Retro Desktop Portfolio Redesign',
+      year: 'October 2025',
+      brief: 'Interactive Windows 95-inspired portfolio combining retro aesthetics with modern UX. Built with React, TypeScript, and Vite. Features sticky note resume widget and responsive design.',
+      role: 'Full-Stack Designer & Developer',
+      icon: '💻',
+      tags: ['Web Design', 'UX/UI', 'Frontend Development', 'Retro Design'],
+      techStack: ['React', 'TypeScript', 'Vite', 'CSS Modules', 'HTML5']
     }
   ];
 
@@ -94,12 +97,12 @@ const Portfolio: React.FC = () => {
       </div>
 
       <div className={styles.projectGrid}>
-        {projects.map((project) => (
-          <div
-            key={project.id}
-            className={`${styles.projectCard} ${selectedProject === project.id ? styles.active : ''}`}
-            onClick={() => setSelectedProject(selectedProject === project.id ? null : project.id)}
-          >
+        {projectCards.map((project) => (
+          <Link key={project.id} to={`/project/${project.id}`} className={styles.projectLink}>
+            <div
+              className={`${styles.projectCard} ${selectedProject === project.id ? styles.active : ''}`}
+              onClick={() => setSelectedProject(selectedProject === project.id ? null : project.id)}
+            >
             <div className={styles.cardHeader}>
               <span className={styles.icon}>{project.icon}</span>
               <span className={styles.year}>{project.year}</span>
@@ -128,7 +131,8 @@ const Portfolio: React.FC = () => {
                 </div>
               </div>
             )}
-          </div>
+            </div>
+          </Link>
         ))}
       </div>
       <div className={styles.footer}>

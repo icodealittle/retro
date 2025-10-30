@@ -49,6 +49,13 @@
   margin-bottom: 2rem;
 }
 
+.projectLink {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
 /* Project Card */
 .projectCard {
   background: rgba(255, 255, 255, 0.95);
