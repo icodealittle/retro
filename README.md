@@ -2,12 +2,12 @@
 
 A Windows 95-inspired interactive portfolio built with **React**, **TypeScript**, and **Vite**. This redesign transforms my portfolio from a developer-centric showcase into a narrative-driven experience that embodies my UX research identity.
 
-## 🎯 The Redesign Journey
+## The Redesign Journey
 
 This portfolio represents a complete UX research-driven redesign of my previous site. After receiving feedback from 10 UX professionals (including 4 senior researchers), I learned that my original design didn't clearly communicate my ability to translate research into experience design.
 
 **Previous Portfolio:** [New_Site_Construction](https://github.com/icodealittle/New_Site_Construction)  
-**Current Portfolio:** You're looking at it! 🎉
+**Current Portfolio:** You're looking at it!
 
 ### Key Changes from Original Design
 
@@ -32,7 +32,7 @@ This portfolio represents a complete UX research-driven redesign of my previous 
 
 ---
 
-## 🎨 Features
+## Features
 
 - **Retro Windows 95 Design** - Authentic visual language with modern interaction patterns
 - **Interactive Components**
@@ -52,7 +52,7 @@ This portfolio represents a complete UX research-driven redesign of my previous 
 - **Accessibility** - WCAG 2.1 AA compliant, keyboard navigation, semantic HTML
 - **Performance** - Lighthouse 95+ scores across all metrics
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **React 18.2.0** - UI framework with hooks
 - **TypeScript 5.2.2** - Type-safe development
@@ -61,7 +61,7 @@ This portfolio represents a complete UX research-driven redesign of my previous 
 - **CSS Modules** - Scoped styling with retro Windows 95 theming
 - **Google Fonts** - VT323 monospace for authentic terminal aesthetic
 
-## 📦 Project Structure
+## Project Structure
 
 ```
 alexos95-portfolio/
@@ -100,7 +100,7 @@ alexos95-portfolio/
 ```
 
 
-## 📋 Key Sections
+## Key Sections
 
 ### Home
 
@@ -131,7 +131,7 @@ Each project card expands to show brief, role, timeline, and tags. Clicking open
 
 Quick links to Email, LinkedIn, and GitHub for direct outreach.
 
-## 🎯 Design Decisions
+## Design Decisions
 
 ### Visual Design
 
@@ -157,7 +157,7 @@ Quick links to Email, LinkedIn, and GitHub for direct outreach.
 - **Centralized Data:** `projectData.ts` makes content updates easy without touching components
 - **Responsive Breakpoints:** 1024px, 768px, 480px for tablet and mobile optimization
 
-## 🎨 Retro Design System
+## Retro Design System
 
 ### Color Variables (from `global.css`)
 
@@ -174,7 +174,7 @@ Quick links to Email, LinkedIn, and GitHub for direct outreach.
 - **Raised:** `border-color: #FFFFFF #000000 #000000 #FFFFFF` (light top-left, dark bottom-right)
 - **Sunken:** `border-color: #000000 #FFFFFF #FFFFFF #000000` (inverted for pressed state)
 
-## 📊 Performance Metrics
+## Performance Metrics
 
 - **Lighthouse Performance:** 95+
 - **Lighthouse Accessibility:** 95+
@@ -183,7 +183,7 @@ Quick links to Email, LinkedIn, and GitHub for direct outreach.
 - **First Contentful Paint:** <1.5s
 - **Time to Interactive:** <2.5s
 
-## 📚 Case Study
+## Case Study
 
 This portfolio itself is a UX research case study! Read the full **AlexOS 95** project details within the site to learn about:
 
@@ -192,7 +192,7 @@ This portfolio itself is a UX research case study! Read the full **AlexOS 95** p
 - A/B testing results and iteration process
 - Quantitative improvements in task completion and user satisfaction
 
-## 🎓 Built By
+## Built By
 
 **Alex Chea** - UX Researcher | Product Designer | Human Factors Specialist
 
@@ -206,7 +206,7 @@ Passionate about cognitive psychology, behavioral design, and building products 
 
 ---
 
-## 📫 Contact
+## Contact
 
 - **Email:** <cheasoumeng@gmail.com>
 - **LinkedIn:** [linkedin.com/in/alexchea](https://linkedin.com/in/alexchea)
