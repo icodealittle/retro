@@ -1,0 +1,14 @@
+# Serve existing files directly (like PDFs, images, fonts)
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# Allow access to public PDFs folder
+<IfModule mod_headers.c>
+  <FilesMatch "\.(pdf|jpg|jpeg|png|gif|svg|ico)$">
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+</IfModule>
+
+# Fallback to React app (index.html) for all other routes
+RewriteRule ^ index.html [L]

@@ -7,7 +7,7 @@
 
 .mainContent {
   flex: 1;
-  padding-bottom: 60px;
+  padding-bottom: 64px;
   /* Height of taskbar + padding */
   overflow-x: hidden;
 }
@@ -18,7 +18,8 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 48px;
+  height: 52px;
+  /* ↑ from 48px */
   background: #c0c0c0;
   border-top: 2px solid #ffffff;
   display: flex;
@@ -26,7 +27,7 @@
   justify-content: space-between;
   font-family: 'VT323', monospace;
   box-shadow: inset 0 2px 0 #808080;
-  padding: 0 1rem;
+  padding: 0 1.2rem;
   z-index: 1000;
 }
 
@@ -39,7 +40,7 @@
 }
 
 .taskbarLeft {
-  gap: 0.5rem;
+  gap: 0.8rem;
 }
 
 .taskbarCenter {
@@ -50,58 +51,73 @@
 
 /* Centered Copyright */
 .copyRight {
-  font-size: 0.9rem;
+  font-size: 1rem;
+  /* ↑ from 0.9rem */
   color: #000;
   background: #c0c0c0;
   border: 2px solid;
   border-color: #ffffff #808080 #808080 #ffffff;
-  padding: 3px 10px;
-  line-height: 1;
+  padding: 4px 12px;
+  line-height: 1.2;
   box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080;
   opacity: 0.95;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease;
 }
 
 .copyRight:hover {
   background: #d4d4d4;
   color: #003366;
+  transform: translateY(-1px);
 }
 
 /* Clock Section */
 .systemTime {
-  font-size: 0.9rem;
+  font-size: 1rem;
+  /* ↑ */
   color: #000;
+  background: #e0e0e0;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  padding: 3px 10px;
+  border-radius: 2px;
+  box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #808080;
 }
 
-/* Start Button */
+/* 🪟 Always-visible Start Button */
 .startButton {
   position: fixed;
-  bottom: 8px;
-  left: 8px;
+  bottom: 6px;
+  /* stays pinned to the viewport */
+  left: 6px;
   display: flex;
   align-items: center;
   gap: 6px;
-  height: 36px;
-  padding: 0 16px;
+  height: 38px;
+  padding: 0 18px;
   background: #c0c0c0;
   border: 2px solid;
   border-color: #ffffff #000000 #000000 #ffffff;
   font-family: 'VT323', monospace;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: bold;
+  color: #000;
   cursor: pointer;
-  transition: all 0.1s ease;
-  z-index: 1100;
+  z-index: 9999;
+  /* stays above all content and taskbar */
+  transition: all 0.15s ease;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
 }
 
 .startButton:hover {
   background: #d0d0d0;
+  transform: translateY(-1px);
 }
 
 .startButton:active {
   border-color: #000000 #ffffff #ffffff #000000;
   background: #b0b0b0;
-  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2);
+  transform: translateY(1px);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .startIcon {
@@ -110,44 +126,67 @@
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .taskbar {
-    height: 44px;
-    padding: 0 0.5rem;
+    height: 48px;
+    padding: 0 1rem;
   }
 
   .copyRight {
-    font-size: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .systemTime {
+    font-size: 0.9rem;
+    padding: 2px 8px;
+  }
+
+  .startButton {
+    height: 36px;
+    padding: 0 14px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .taskbar {
+    height: 44px;
+    padding: 0 0.6rem;
+  }
+
+  .copyRight {
+    font-size: 0.9rem;
     padding: 2px 6px;
   }
 
   .startButton {
-    height: 32px;
+    height: 34px;
     padding: 0 12px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 
   .systemTime {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
   }
 }
 
 @media (max-width: 480px) {
   .taskbar {
-    height: 40px;
+    height: 42px;
   }
 
   .copyRight {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     padding: 2px 5px;
   }
 
   .startButton {
-    height: 28px;
+    height: 30px;
     padding: 0 8px;
+    font-size: 0.9rem;
   }
 
   .systemTime {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
   }
 }

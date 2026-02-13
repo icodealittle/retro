@@ -2,7 +2,7 @@
 .homeContainer {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 3rem 2rem;
+  padding: 3.5rem 2rem;
   animation: fadeIn 0.8s ease-in-out;
 }
 
@@ -18,7 +18,7 @@
 
 /* Hero Section */
 .hero {
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
   animation: slideInDown 0.6s ease-out;
 }
 
@@ -45,17 +45,17 @@
 /* Window Header */
 .windowTitleBar {
   background: linear-gradient(90deg, #000080, #1084d0);
-  padding: 6px 8px;
+  padding: 8px 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #000000;
+  border-bottom: 2px solid #000;
 }
 
 .windowTitle {
-  color: #ffffff;
+  color: #fff;
   font-family: "VT323", monospace;
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: bold;
   letter-spacing: 0.5px;
 }
@@ -64,19 +64,19 @@
   display: flex;
   gap: 4px;
   font-family: "VT323", monospace;
-  color: #ffffff;
+  color: #fff;
   user-select: none;
 }
 
 .windowControls span {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   background: #c0c0c0;
-  color: #000000;
+  color: #000;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.9rem;
+  font-size: 1rem;
   cursor: pointer;
   border: 1px solid #808080;
 }
@@ -85,9 +85,9 @@
   background: #d0d0d0;
 }
 
-/* ✅ Hero Content Layout */
+/* Hero Content */
 .heroContent {
-  padding: 3rem 3rem;
+  padding: 3.2rem 3rem;
 }
 
 /* Two-Column Intro */
@@ -103,18 +103,20 @@
 .introText {
   flex: 1;
   min-width: 320px;
-  max-width: 700px;
+  max-width: 760px;
   text-align: left;
+  word-wrap: break-word;
+  white-space: normal;
 }
 
 /* Profile Frame */
 .profileFrame {
-  width: 320px;
-  height: 320px;
+  width: 340px;
+  height: 340px;
   border: 6px solid;
   border-color: #e0e0e0 #6a8f8a #6a8f8a #e0e0e0;
   background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
-  box-shadow: 4px 4px 0 #6a8f8a, -4px -4px 0 #ffffff;
+  box-shadow: 4px 4px 0 #6a8f8a, -4px -4px 0 #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -134,7 +136,7 @@
 
 .profileFrame:hover {
   transform: translateY(-3px);
-  box-shadow: 6px 6px 0 #4c706b, -3px -3px 0 #ffffff;
+  box-shadow: 6px 6px 0 #4c706b, -3px -3px 0 #fff;
 }
 
 .profileImage {
@@ -147,9 +149,9 @@
 
 /* Hero Text */
 .heroTitle {
-  font-size: 3.2rem;
+  font-size: 3.6rem;
   color: #214f4b;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   font-family: "Press Start 2P", cursive;
   line-height: 1.4;
   letter-spacing: 2px;
@@ -178,26 +180,26 @@
 }
 
 .heroSubtitle {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   color: #235789;
   font-family: "VT323", monospace;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
   font-style: italic;
 }
 
 .heroDescription {
-  font-size: 1.1rem;
-  color: #333333;
+  font-size: 1.3rem;
+  color: #333;
   line-height: 1.9;
-  max-width: 800px;
-  margin: 0 auto 2rem;
+  max-width: 850px;
+  margin: 0 auto 2.2rem;
   font-family: "VT323", monospace;
 }
 
 /* Buttons */
 .heroButtons {
   display: flex;
-  gap: 1rem;
+  gap: 1.2rem;
   justify-content: flex-start;
   flex-wrap: wrap;
   margin-top: 1rem;
@@ -205,9 +207,9 @@
 
 .primaryButton,
 .secondaryButton {
-  padding: 0.9rem 1.8rem;
+  padding: 1rem 2rem;
   font-family: "VT323", monospace;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   text-decoration: none;
   border: 3px solid;
   cursor: pointer;
@@ -217,8 +219,8 @@
 
 .primaryButton {
   background: #214f4b;
-  color: #ffffff;
-  border-color: #ffffff #000000 #000000 #ffffff;
+  color: #fff;
+  border-color: #fff #000 #000 #fff;
   box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -231,7 +233,7 @@
 .secondaryButton {
   background: #d9b888;
   color: #214f4b;
-  border-color: #ffffff #000000 #000000 #ffffff;
+  border-color: #fff #000 #000 #fff;
   box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -245,7 +247,7 @@
 .resumeWidget {
   background: rgba(255, 255, 255, 0.95);
   border: 4px solid;
-  border-color: #ffffff #000000 #000000 #ffffff;
+  border-color: #fff #000 #000 #fff;
   box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.2);
   max-width: 1000px;
   margin: 0 auto;
@@ -268,17 +270,17 @@
 /* Widget Title */
 .widgetTitleBar {
   background: linear-gradient(90deg, #000080, #1084d0);
-  padding: 6px 8px;
+  padding: 8px 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #000000;
+  border-bottom: 2px solid #000;
 }
 
 .widgetTitle {
-  color: #ffffff;
+  color: #fff;
   font-family: "VT323", monospace;
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: bold;
 }
 
@@ -292,12 +294,12 @@
 
 .tab {
   flex: 1;
-  padding: 0.9rem 1rem;
+  padding: 1rem 1.1rem;
   background: #d9b888;
   border: 2px solid;
-  border-color: #ffffff #000000 #000000 #ffffff;
+  border-color: #fff #000 #000 #fff;
   font-family: "VT323", monospace;
-  font-size: 1rem;
+  font-size: 1.1rem;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -317,22 +319,23 @@
 
 /* Widget Content */
 .widgetContent {
-  padding: 2rem;
+  padding: 2.2rem;
   min-height: 350px;
-  background: #ffffff;
+  background: #fff;
   font-family: "VT323", monospace;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
 }
 
-/* ✅ Experience Section */
+/* Experience Section */
 .experienceList {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.4rem;
 }
 
 .experienceItem {
-  padding: 1rem 1.2rem;
+  padding: 1.2rem 1.4rem;
   background: #fffef8;
   border: 2px solid #d9b888;
   border-left: 6px solid #214f4b;
@@ -347,40 +350,39 @@
 
 .experienceItem h3 {
   color: #214f4b;
-  font-size: 1.2rem;
+  font-size: 1.35rem;
   margin-bottom: 0.3rem;
 }
 
 .company {
   color: #235789;
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   font-style: italic;
   margin-bottom: 0.5rem;
 }
 
 .details {
-  color: #333333;
-  font-size: 0.95rem;
-  line-height: 1.7;
-  margin: 0;
+  color: #333;
+  font-size: 1.05rem;
+  line-height: 1.75;
 }
 
-/* ✅ Projects Section */
+/* Projects Section */
 .projectList {
   list-style: none;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1rem;
 }
 
 .projectList li {
-  padding: 0.8rem 1rem;
+  padding: 1rem 1.2rem;
   background: linear-gradient(135deg, #fff9e6 0%, #fffef8 100%);
   border: 2px solid #d9b888;
   border-left: 4px solid #235789;
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 1.05rem;
+  line-height: 1.7;
   transition: background 0.2s ease;
 }
 
@@ -388,7 +390,7 @@
   background: #ffefc5;
 }
 
-/* ✅ Skills Section */
+/* Skills Section */
 .skillsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -398,7 +400,7 @@
 
 .skillCategory h4 {
   color: #214f4b;
-  font-size: 1rem;
+  font-size: 1.15rem;
   margin-bottom: 0.8rem;
   text-transform: uppercase;
   border-bottom: 2px solid #d9b888;
@@ -406,19 +408,13 @@
   letter-spacing: 1px;
 }
 
-.skillTags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
 .skillTag {
   display: inline-block;
   background: #add9f4;
   color: #214f4b;
-  padding: 0.4rem 0.8rem;
+  padding: 0.45rem 0.9rem;
   border: 1px solid #214f4b;
-  font-size: 0.9rem;
+  font-size: 1rem;
   border-radius: 2px;
   box-shadow: 1px 1px 0 #235789;
   transition: transform 0.1s ease, background 0.2s ease;
@@ -429,44 +425,45 @@
   transform: translateY(-2px);
 }
 
-/* ✅ Achievements Section */
+/* Achievements Section */
 .achievementList {
   list-style: none;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1rem;
 }
 
 .achievementList li {
-  padding: 0.8rem 1rem;
+  padding: 1rem 1.2rem;
   background: linear-gradient(135deg, #ffe4b5 0%, #fffacd 100%);
   border: 2px solid #d9b888;
   border-left: 4px solid #c99a5f;
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 1.05rem;
+  line-height: 1.7;
 }
 
-/* ✅ Responsive */
-@media (max-width: 1024px) {
+/* Responsive */
+@media (max-width:1024px) {
   .heroTitle {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
 
   .heroSubtitle {
-    font-size: 1.2rem;
+    font-size: 1.35rem;
   }
 
   .heroDescription {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    max-width: 90%;
   }
 
   .widgetContent {
-    padding: 1.8rem;
+    padding: 1.9rem;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width:768px) {
   .heroIntroRow {
     flex-direction: column;
     text-align: center;
@@ -477,20 +474,23 @@
   }
 
   .profileFrame {
-    width: 240px;
-    height: 240px;
+    width: 300px;
+    height: 300px;
   }
 
   .heroTitle {
-    font-size: 1.8rem;
+    font-size: 1.25rem;
   }
 
   .heroSubtitle {
-    font-size: 1rem;
+    font-size: 1.0rem;
   }
 
   .heroDescription {
     font-size: 0.95rem;
+    max-width: 90%;
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
   }
 
   .heroButtons {
@@ -502,13 +502,15 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width:480px) {
   .heroTitle {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .heroDescription {
-    font-size: 0.9rem;
+    font-size: 1rem;
+    max-width: 95%;
+    line-height: 1.55;
   }
 
   .primaryButton,
@@ -518,10 +520,10 @@
   }
 
   .experienceItem h3 {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .details {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 }

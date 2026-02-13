@@ -1,0 +1,436 @@
+/* ==========================================================================
+   RESPONSIVE UTILITIES - Enhanced Auto-Adjusting System
+   ========================================================================== */
+
+/* 
+  This file provides utility classes and enhanced responsive behavior
+  to ensure the portfolio adapts seamlessly to any device size
+*/
+
+/* ==========================================================================
+   1. FLUID TYPOGRAPHY - Automatically scales text based on viewport
+   ========================================================================== */
+
+:root {
+  /* Fluid font sizes using clamp() - auto-scales between min and max */
+  --fluid-heading-xl: clamp(1.8rem, 4vw + 1rem, 3.6rem);
+  --fluid-heading-lg: clamp(1.5rem, 3vw + 0.8rem, 2.8rem);
+  --fluid-heading-md: clamp(1.3rem, 2.5vw + 0.6rem, 2.2rem);
+  --fluid-heading-sm: clamp(1.1rem, 2vw + 0.5rem, 1.8rem);
+  --fluid-body-lg: clamp(1rem, 1.2vw + 0.4rem, 1.3rem);
+  --fluid-body-md: clamp(0.95rem, 1vw + 0.3rem, 1.1rem);
+  --fluid-body-sm: clamp(0.9rem, 0.8vw + 0.2rem, 1rem);
+  
+  /* Fluid spacing - auto-scales padding/margins */
+  --fluid-space-xs: clamp(0.5rem, 1vw, 1rem);
+  --fluid-space-sm: clamp(1rem, 2vw, 1.5rem);
+  --fluid-space-md: clamp(1.5rem, 3vw, 2.5rem);
+  --fluid-space-lg: clamp(2rem, 4vw, 3.5rem);
+  --fluid-space-xl: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+/* ==========================================================================
+   2. CONTAINER QUERIES - Modern responsive approach (where supported)
+   ========================================================================== */
+
+@supports (container-type: inline-size) {
+  .responsive-container {
+    container-type: inline-size;
+    container-name: responsive;
+  }
+  
+  /* Cards adapt based on container width, not viewport */
+  @container responsive (max-width: 600px) {
+    .card-adaptive {
+      grid-template-columns: 1fr !important;
+      padding: 1rem !important;
+    }
+  }
+}
+
+/* ==========================================================================
+   3. VIEWPORT-BASED UTILITIES
+   ========================================================================== */
+
+/* Hide elements at specific breakpoints */
+.hide-mobile {
+  display: block;
+}
+
+.hide-tablet {
+  display: block;
+}
+
+.hide-desktop {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none;
+  }
+  
+  .hide-tablet {
+    display: block;
+  }
+  
+  .hide-desktop {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hide-tablet {
+    display: none;
+  }
+}
+
+/* Show elements at specific breakpoints */
+.show-mobile {
+  display: none;
+}
+
+.show-tablet {
+  display: none;
+}
+
+.show-desktop {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .show-mobile {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .show-tablet {
+    display: block;
+  }
+}
+
+/* ==========================================================================
+   4. FLEXIBLE GRID SYSTEM - Auto-adjusting columns
+   ========================================================================== */
+
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: var(--fluid-space-md);
+}
+
+.auto-grid-narrow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+  gap: var(--fluid-space-sm);
+}
+
+.auto-grid-wide {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+  gap: var(--fluid-space-lg);
+}
+
+/* ==========================================================================
+   5. FLEXIBLE IMAGES & MEDIA
+   ========================================================================== */
+
+.responsive-img,
+.responsive-media {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.aspect-ratio-16-9 {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  width: 100%;
+}
+
+.aspect-ratio-4-3 {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  width: 100%;
+}
+
+.aspect-ratio-1-1 {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* ==========================================================================
+   6. TOUCH-FRIENDLY TARGETS - Larger tap areas on mobile
+   ========================================================================== */
+
+@media (hover: none) and (pointer: coarse) {
+  /* Mobile/touch devices */
+  button,
+  a,
+  .clickable {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.75rem 1.25rem;
+  }
+  
+  /* Increase touch targets for icons */
+  .icon-button {
+    padding: 1rem;
+  }
+}
+
+/* ==========================================================================
+   7. ORIENTATION-BASED ADJUSTMENTS
+   ========================================================================== */
+
+@media (orientation: landscape) and (max-height: 600px) {
+  /* Reduce vertical spacing in landscape on short screens */
+  .homeContainer,
+  .portfolioContainer,
+  .contactContainer,
+  .detailContainer {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  
+  .hero {
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+/* ==========================================================================
+   8. REDUCED MOTION - Accessibility for users who prefer less animation
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   9. HIGH CONTRAST MODE - Accessibility for users who need high contrast
+   ========================================================================== */
+
+@media (prefers-contrast: high) {
+  * {
+    border-color: currentColor !important;
+  }
+  
+  .projectCard,
+  .formWindow,
+  .infoWindow,
+  .notepad {
+    border-width: 3px !important;
+  }
+}
+
+/* ==========================================================================
+   10. DARK MODE DETECTION (Optional - if you want to add dark mode later)
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+  /* Currently disabled, but ready for dark mode implementation */
+  /* 
+  :root {
+    --text: #FFFFFF;
+    --background: #1a1a1a;
+  }
+  */
+}
+
+/* ==========================================================================
+   11. PRINT STYLES - Optimized for printing
+   ========================================================================== */
+
+@media print {
+  /* Hide navigation and interactive elements */
+  .startButton,
+  .taskbar,
+  .menuWindow,
+  .backdrop {
+    display: none !important;
+  }
+  
+  /* Optimize for print */
+  body {
+    background: white;
+    color: black;
+  }
+  
+  .projectCard,
+  .heroWindow,
+  .notepad {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  
+  /* Remove shadows and effects for print */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+}
+
+/* ==========================================================================
+   12. SUPER SMALL DEVICES (< 360px) - Extra small phones
+   ========================================================================== */
+
+@media (max-width: 359px) {
+  :root {
+    --base-font-size: 14px;
+  }
+  
+  /* Force smaller padding on tiny screens */
+  .homeContainer,
+  .portfolioContainer,
+  .contactContainer,
+  .detailContainer {
+    padding: 1rem 0.75rem !important;
+  }
+  
+  /* Reduce title sizes */
+  .heroTitle,
+  .title {
+    font-size: 1.2rem !important;
+  }
+  
+  /* Stack buttons vertically */
+  .heroButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .heroButtons > * {
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   13. EXTRA LARGE SCREENS (> 1920px) - Prevent excessive stretching
+   ========================================================================== */
+
+@media (min-width: 1920px) {
+  .homeContainer,
+  .portfolioContainer,
+  .contactContainer,
+  .detailContainer {
+    max-width: 1600px;
+  }
+  
+  /* Limit line length for readability */
+  .paragraph,
+  .heroDescription,
+  .brief {
+    max-width: 80ch; /* Optimal reading width */
+  }
+}
+
+/* ==========================================================================
+   14. UTILITY CLASSES FOR MANUAL RESPONSIVE CONTROL
+   ========================================================================== */
+
+/* Responsive text alignment */
+.text-center-mobile {
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .text-center-mobile {
+    text-align: center;
+  }
+}
+
+/* Responsive flex direction */
+.flex-column-mobile {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 768px) {
+  .flex-column-mobile {
+    flex-direction: column;
+  }
+}
+
+/* Responsive width */
+.full-width-mobile {
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .full-width-mobile {
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   15. SMOOTH SCROLLING & SCROLL SNAP (For better UX)
+   ========================================================================== */
+
+@media (min-width: 1025px) {
+  /* Smooth scrolling only on desktop */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Optional scroll snap for sections */
+  .scroll-snap-container {
+    scroll-snap-type: y proximity;
+  }
+  
+  .scroll-snap-section {
+    scroll-snap-align: start;
+  }
+}
+
+/* ==========================================================================
+   16. SAFE AREA INSETS - For notched devices (iPhone X, etc.)
+   ========================================================================== */
+
+@supports (padding: max(0px)) {
+  .homeContainer,
+  .portfolioContainer,
+  .contactContainer,
+  .detailContainer {
+    padding-left: max(2rem, env(safe-area-inset-left));
+    padding-right: max(2rem, env(safe-area-inset-right));
+  }
+  
+  .taskbar {
+    padding-left: max(1.2rem, env(safe-area-inset-left));
+    padding-right: max(1.2rem, env(safe-area-inset-right));
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* ==========================================================================
+   17. HOVER EFFECTS - Only on devices that support hover
+   ========================================================================== */
+
+@media (hover: hover) {
+  /* These hover effects only work on desktop/mouse devices */
+  .interactive-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .interactive-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@media (hover: none) {
+  /* On touch devices, use active states instead */
+  .interactive-hover:active {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
+}
