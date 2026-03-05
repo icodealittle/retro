@@ -29,22 +29,6 @@
   margin-bottom: 2rem;
 }
 
-/* Reconstruction Notice */
-.reconstructionNotice {
-  background: linear-gradient(135deg, #FFE4B5 0%, #FFD700 100%);
-  border: 2px solid #214F4B;
-  padding: 1.2rem;
-  margin-top: 1rem;
-  font-family: 'VT323', monospace;
-  text-align: center;
-  font-size: 1.05rem;
-  /* ↑ */
-  color: #333333;
-}
-
-.reconstructionNotice p {
-  margin: 0.4rem 0;
-}
 
 /* Project Grid */
 .projectGrid {
@@ -293,4 +277,172 @@
   .brief {
     font-size: 0.9rem;
   }
+}
+
+/* ===============================
+   Windows 95 Project Window
+   =============================== */
+
+.desktopWindow {
+  position: fixed;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 600px;
+
+  background: #C0C0C0;
+  border: 3px solid;
+  border-color: #FFFFFF #000000 #000000 #FFFFFF;
+
+  box-shadow: 6px 6px 0 rgba(0,0,0,0.35);
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.windowHeader {
+  background: linear-gradient(90deg, #000080, #235789);
+  color: white;
+
+  padding: 6px 10px;
+  font-family: 'VT323', monospace;
+  font-size: 1.1rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 2px solid #000;
+}
+
+.windowClose {
+  background: #C0C0C0;
+  border: 2px solid;
+  border-color: #FFFFFF #000000 #000000 #FFFFFF;
+
+  font-family: 'VT323', monospace;
+  font-size: 1rem;
+
+  padding: 2px 8px;
+  cursor: pointer;
+}
+
+.windowClose:hover {
+  background: #E0E0E0;
+}
+
+.windowContent {
+  flex: 1;
+  background: white;
+  overflow: hidden;
+}
+
+.projectFrame {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* WINDOWS */
+
+.desktopWindow {
+  position: fixed;
+  width: 720px;
+  height: 500px;
+  background: #C0C0C0;
+  border: 3px solid;
+  border-color: #FFFFFF #000000 #000000 #FFFFFF;
+  display: flex;
+  flex-direction: column;
+}
+
+.windowHeader {
+  background: linear-gradient(90deg, #000080, #235789);
+  color: white;
+  padding: 6px 10px;
+  font-family: 'VT323', monospace;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.windowButtons button {
+  margin-left: 6px;
+  background: #C0C0C0;
+  border: 2px solid;
+  border-color: #FFFFFF #000000 #000000 #FFFFFF;
+  cursor: pointer;
+  padding: 2px 8px;
+}
+
+.projectFrame {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* TASKBAR */
+
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: #C0C0C0;
+  border-top: 2px solid #000;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  gap: 6px;
+}
+
+.taskbarItem {
+  background: #E0E0E0;
+  border: 2px solid;
+  border-color: #FFFFFF #000000 #000000 #FFFFFF;
+  padding: 4px 10px;
+  font-family: 'VT323', monospace;
+  cursor: pointer;
+}
+
+/* ===============================
+   Featured / View More Button
+   =============================== */
+
+.viewMoreContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.viewMoreButton {
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
+
+  background: #C0C0C0;
+
+  border: 3px solid;
+  border-color: #FFFFFF #000000 #000000 #FFFFFF;
+
+  padding: 10px 22px;
+
+  cursor: pointer;
+
+  transition: all 0.15s ease;
+
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.25);
+}
+
+.viewMoreButton:hover {
+  background: #DCDCDC;
+}
+
+.viewMoreButton:active {
+  border-color: #000000 #FFFFFF #FFFFFF #000000;
+  transform: translate(2px, 2px);
+  box-shadow: none;
 }

@@ -435,3 +435,10 @@
         font-size: 0.9rem;
     }
 }
+
+.caseNotice {
+  margin-top: 12px;
+  font-family: 'VT323', monospace;
+  font-size: 1rem;
+  color: #214F4B;
+}

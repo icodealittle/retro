@@ -700,20 +700,205 @@ export interface ProjectDetail {
   brief: string;
   tags: string[];
   techStack?: string[];
+
   overview: Section;
   process: Section;
   outcome: Section;
-  // New optional fields for custom projects
+
   pdfLink?: string;
   prototypeLink?: string;
+
   insights?: Section;
   designPhilosophy?: Section;
   buildAnimations?: Section;
   researchTesting?: Section;
   designOutcome?: Section;
+
+  research?: Section;
+  analysis?: Section;
+  recommendations?: Section;
+  design?: Section;
+  prototype?: Section;
 }
 
 export const projectsData: ProjectDetail[] = [
+  {
+  id: 'welchs-ai',
+  title: 'Welch’s AI Adoption Insights',
+  year: 'September – December 2025',
+  role: 'Graduate Consultant',
+  icon: 'bi-cpu',
+  brief: 'Mixed-methods research study analyzing barriers to generative AI adoption across organizational teams.',
+  tags: ['AI Strategy','Mixed Methods Research','Stakeholder Interviews','Organizational Change'],
+  pdfLink: '/pdfs/Generative_AI_Adoption_Welchs.pdf',
+
+  overview: {
+    title: 'Project Overview',
+    quote: 'Technology adoption fails not because of tools—but because of people, systems, and trust.',
+    content: [
+      'This consulting engagement examined how generative AI tools could be adopted within Welch’s organization.',
+      'Using a mixed-methods approach, qualitative stakeholder interviews were combined with internal analytics to understand adoption patterns across departments.',
+      'The project translated research insights into strategic recommendations guiding a phased AI adoption roadmap.'
+    ]
+  },
+
+  research: {
+    title: 'Research',
+    content: [
+      'Semi-structured interviews were conducted with 12 employees across three departments.',
+      'Affinity mapping and thematic coding identified common concerns regarding training, ROI clarity, and workflow integration.'
+    ],
+    subsections: [
+      {
+        heading: 'Methods',
+        points: [
+          'Stakeholder interviews (n=12)',
+          'Affinity mapping for thematic coding',
+          'Usage analytics triangulation',
+          'Cross-department comparison'
+        ]
+      }
+    ]
+  },
+
+  analysis: {
+    title: 'Analysis',
+    content: [
+      'Analysis revealed that employees were open to AI experimentation but lacked structured training and governance guidance.',
+      'Adoption patterns varied significantly by department and technical familiarity.'
+    ],
+    subsections: [
+      {
+        heading: 'Key Barriers',
+        points: [
+          'Training gaps in generative AI tools',
+          'Unclear productivity ROI',
+          'Uncertainty around responsible AI usage',
+          'Change management challenges'
+        ]
+      }
+    ]
+  },
+
+  recommendations: {
+    title: 'Strategic Recommendations',
+    content: [
+      'Findings were synthesized into an adoption framework designed for scalable implementation across the organization.'
+    ],
+    subsections: [
+      {
+        heading: 'Adoption Strategy',
+        points: [
+          'Phase 1: AI literacy training and experimentation sandbox',
+          'Phase 2: Department workflow pilots',
+          'Phase 3: Organization-wide governance and tool standardization',
+          'Create AI champions across teams'
+        ]
+      }
+    ],
+    metrics: [
+      { label:'Stakeholder Interviews', value:'12' },
+      { label:'Departments', value:'3' },
+      { label:'Employees Impacted', value:'200+' },
+      { label:'Research Approach', value:'Mixed Methods' }
+    ]
+  },
+
+  process:{title:'',content:[]},
+  outcome:{title:'',content:[]}
+},
+{
+  id: 'whisk-whisper',
+  title: 'Whisk & Whisper',
+  year: 'September – December 2025',
+  role: 'Product Designer & Developer',
+  icon: 'bi-mic',
+  brief: 'Voice-assisted cooking system designed to reduce cognitive load for novice cooks.',
+  tags: ['Voice Interface','Human Factors','UX Design','AI Interaction'],
+  prototypeLink:'https://github.com/icodealittle/whisk-whisper',
+
+  overview:{
+    title:'Project Overview',
+    quote:'Cooking should feel intuitive—not like multitasking under pressure.',
+    content:[
+      'Whisk & Whisper is a voice-guided cooking assistant designed to help novice cooks follow complex recipes without needing to constantly read instructions.',
+      'Traditional recipe apps force users to shift attention between cooking and their phone, increasing cognitive load and errors.',
+      'This project explores how conversational interfaces can provide hands-free guidance throughout cooking workflows.'
+    ]
+  },
+
+  research:{
+    title:'Research',
+    content:[
+      'Interviews with beginner cooks revealed frequent challenges with timing, multitasking, and remembering recipe steps.',
+      'Observation sessions showed users repeatedly touching their phones or rereading instructions.'
+    ],
+    subsections:[
+      {
+        heading:'Pain Points',
+        points:[
+          'Touching devices with messy hands',
+          'Difficulty tracking multi-step recipes',
+          'Forgetting preparation tasks',
+          'Cognitive overload during simultaneous steps'
+        ]
+      }
+    ]
+  },
+
+  design:{
+    title:'Design',
+    content:[
+      'The design focuses on conversational interaction that provides step-by-step cooking instructions.',
+      'Recipes were converted into structured step sequences allowing dynamic guidance.'
+    ],
+    subsections:[
+      {
+        heading:'Design Decisions',
+        points:[
+          'Hands-free voice prompts',
+          'Step confirmation system',
+          'Adaptive pacing based on cooking time',
+          'Clear ingredient preparation reminders'
+        ]
+      }
+    ]
+  },
+
+  prototype:{
+    title:'Prototype',
+    content:[
+      'The prototype integrates voice prompts with a structured recipe engine.',
+      'Users can navigate steps through commands like "next step", "repeat", or "how long?".'
+    ],
+    subsections:[
+      {
+        heading:'Technology',
+        points:[
+          'React frontend',
+          'Structured JSON recipe system',
+          'Voice interaction command parsing'
+        ]
+      }
+    ]
+  },
+
+  outcome:{
+    title:'Outcome',
+    content:[
+      'The prototype demonstrates how conversational interfaces can reduce cognitive load during physical tasks like cooking.',
+      'Voice-guided instruction keeps users focused on cooking rather than device interaction.'
+    ],
+    metrics:[
+      {label:'Project Duration',value:'4 months'},
+      {label:'User Interviews',value:'6'},
+      {label:'Interaction Mode',value:'Voice-first'}
+    ]
+  },
+
+  process:{title:'',content:[]}
+},
+
   {
     id: 'hydratrim',
     title: 'Hydra-Trim: L\'Oreal Brandstorm 2025',
