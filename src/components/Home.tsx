@@ -308,7 +308,9 @@ const Home: React.FC = () => {
       <div className={styles.hero}>
         <div className={styles.heroWindow}>
           <div className={styles.windowTitleBar}>
-            <span className={styles.windowTitle}><i className="bi bi-laptop"></i> welcome.exe</span>
+            <span className={styles.windowTitle}>
+              <i className="bi bi-laptop"></i> welcome.exe
+            </span>
             <div className={styles.windowControls}>
               <span>_</span>
               <span>□</span>
@@ -337,17 +339,36 @@ const Home: React.FC = () => {
                   UX Researcher · Product Designer · Human Factors Specialist
                 </p>
                 <p className={styles.heroDescription}>
-                  I'm a tech-driven problem solver passionate about leveraging AI, data, and human-centered design to create impactful solutions. With a Master's in Computer Science (focusing on data science and human-centered AI) from Northeastern University and currently pursuing a dual MBA/MS in Human Factors in Information Design at Bentley University, I approach innovation from both technical and human perspectives.
+                  I'm a tech-driven problem solver passionate about leveraging
+                  AI, data, and human-centered design to create impactful
+                  solutions. With a Master's in Computer Science (focusing on
+                  data science and human-centered AI) from Northeastern
+                  University and currently pursuing a dual MBA/MS in Human
+                  Factors in Information Design at Bentley University, I
+                  approach innovation from both technical and human
+                  perspectives.
                 </p>
                 <p className={styles.heroDescription}>
-                  My experience spans building dashboards and automated workflows that improved data accuracy and efficiency by 20%, designing Python and SQL pipelines for enterprise reporting, and translating complex data into actionable insights that help teams act quickly and confidently.
+                  My experience spans building dashboards and automated
+                  workflows that improved data accuracy and efficiency by 20%,
+                  designing Python and SQL pipelines for enterprise reporting,
+                  and translating complex data into actionable insights that
+                  help teams act quickly and confidently.
                 </p>
 
                 {/* Buttons */}
                 <div className={styles.heroButtons}>
-                  <Link to="/portfolio" className={styles.primaryButton}>
-                    View Portfolio →
-                  </Link>
+                  {/* <Link to="/pdfs/Alex_Chea_Portfolio.pdf" className={styles.primaryButton}>
+                    View Portfolio Deck
+                  </Link> */}
+                  <a
+                    href="/pdfs/Alex_Chea_Portfolio.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.primaryButton}
+                  >
+                    View Portfolio Deck
+                  </a>
                   <Link to="/contact" className={styles.secondaryButton}>
                     Get in Touch
                   </Link>
@@ -369,7 +390,9 @@ const Home: React.FC = () => {
       {/* Resume Widget */}
       <div className={styles.resumeWidget}>
         <div className={styles.widgetTitleBar}>
-          <span className={styles.widgetIcon}><i className="bi bi-file-earmark-text"></i></span>
+          <span className={styles.widgetIcon}>
+            <i className="bi bi-file-earmark-text"></i>
+          </span>
           <span className={styles.widgetTitle}>resume.txt - Notepad</span>
           <div className={styles.windowControls}>
             <span>_</span>
@@ -380,36 +403,40 @@ const Home: React.FC = () => {
 
         {/* Tabs */}
         <div className={styles.tabs}>
-          {(['experience', 'projects', 'skills', 'achievements'] as const).map((tab) => (
-            <button
-              key={tab}
-              className={`${styles.tab} ${activeTab === tab ? styles.activeTab : ''}`}
-              onClick={() => setActiveTab(tab)}
-            >
-              {tab === 'experience' && <i className="bi bi-briefcase"></i>}
-              {tab === 'projects' && <i className="bi bi-rocket"></i>}
-              {tab === 'skills' && <i className="bi bi-lightning"></i>}
-              {tab === 'achievements' && <i className="bi bi-trophy"></i>}
-              <span>{tab.charAt(0).toUpperCase() + tab.slice(1)}</span>
-            </button>
-          ))}
+          {(["experience", "projects", "skills", "achievements"] as const).map(
+            (tab) => (
+              <button
+                key={tab}
+                className={`${styles.tab} ${activeTab === tab ? styles.activeTab : ""}`}
+                onClick={() => setActiveTab(tab)}
+              >
+                {tab === "experience" && <i className="bi bi-briefcase"></i>}
+                {tab === "projects" && <i className="bi bi-rocket"></i>}
+                {tab === "skills" && <i className="bi bi-lightning"></i>}
+                {tab === "achievements" && <i className="bi bi-trophy"></i>}
+                <span>{tab.charAt(0).toUpperCase() + tab.slice(1)}</span>
+              </button>
+            ),
+          )}
         </div>
 
         {/* Content */}
         <div className={styles.widgetContent}>
-          {activeTab === 'experience' && (
+          {activeTab === "experience" && (
             <div className={styles.experienceList}>
               {resumeData.experience.map((exp, idx) => (
                 <div key={idx} className={styles.experienceItem}>
                   <h3>{exp.role}</h3>
-                  <p className={styles.company}>{exp.company} · {exp.period}</p>
+                  <p className={styles.company}>
+                    {exp.company} · {exp.period}
+                  </p>
                   <p className={styles.details}>{exp.details}</p>
                 </div>
               ))}
             </div>
           )}
 
-          {activeTab === 'projects' && (
+          {activeTab === "projects" && (
             <ul className={styles.projectList}>
               {resumeData.projects.map((project, idx) => (
                 <li key={idx}>
@@ -419,14 +446,18 @@ const Home: React.FC = () => {
             </ul>
           )}
 
-          {activeTab === 'skills' && (
+          {activeTab === "skills" && (
             <div className={styles.skillsGrid}>
               {Object.entries(resumeData.skills).map(([category, skills]) => (
                 <div key={category} className={styles.skillCategory}>
-                  <h4>{category.charAt(0).toUpperCase() + category.slice(1)}</h4>
+                  <h4>
+                    {category.charAt(0).toUpperCase() + category.slice(1)}
+                  </h4>
                   <div className={styles.skillTags}>
                     {skills.map((skill, idx) => (
-                      <span key={idx} className={styles.skillTag}>{skill}</span>
+                      <span key={idx} className={styles.skillTag}>
+                        {skill}
+                      </span>
                     ))}
                   </div>
                 </div>
@@ -434,7 +465,7 @@ const Home: React.FC = () => {
             </div>
           )}
 
-          {activeTab === 'achievements' && (
+          {activeTab === "achievements" && (
             <ul className={styles.achievementList}>
               {resumeData.achievements.map((achievement, idx) => (
                 <li key={idx}>
