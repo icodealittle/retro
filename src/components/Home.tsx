@@ -1,304 +1,168 @@
-// import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
-// import styles from '../styles/Home.module.css';
-
-// const Home: React.FC = () => {
-//   const [activeTab, setActiveTab] = useState<'experience' | 'projects' | 'skills' | 'achievements'>('experience');
-
-//   const resumeData = {
-//     experience: [
-//       {
-//         role: 'Digital Content & Analytics Intern',
-//         company: 'Bentley University – University Communication Advancement',
-//         period: "August'25 - Present",
-//         details:
-//           'Designing analytics dashboards and automating content reporting to support digital engagement strategies. Collaborating with marketing and IT teams to track KPIs and optimize university-wide communications using Power BI and SQL.',
-//       },
-//       {
-//         role: 'Data Analyst Intern',
-//         company: 'Bentley University – University Communication Advancement',
-//         period: "June - August'25",
-//         details:
-//           'Developed interactive Power BI dashboards and performed exploratory data analysis on campaign engagement metrics. Identified trends that informed new content strategies, improving reach and conversion rates by 15%.',
-//       },
-//       {
-//         role: 'Data Engineer Freelance Consultant',
-//         company: 'UCare Pharmacy',
-//         period: "June'23 - August'22",
-//         details:
-//           'Built Python-based data pipelines for customer analytics and pharmacy operations. Automated reporting workflows to improve data accuracy and delivery speed by 20%, supporting better decision-making and patient care insights.',
-//       },
-//       {
-//         role: 'UX Freelance Consultant',
-//         company: 'Dawn Café',
-//         period: "February - July'22",
-//         details:
-//           'Led UX redesign for a local café’s digital ordering system. Conducted user interviews and usability tests to identify friction points, resulting in a 25% improvement in task completion time and higher customer satisfaction.',
-//       },
-//       {
-//         role: 'Student Recruitment Ambassador',
-//         company: 'Northeastern University - Khoury College of Computer Sciences',
-//         period: "April'21 - August'22",
-//         details:
-//           'Supported prospective students through one-on-one sessions and campus tours. Shared insights about the Align program and promoted diversity in computing by mentoring new entrants from non-technical backgrounds.',
-//       },
-//       {
-//         role: 'UX Designer Extern',
-//         company: 'Innsure, Inc.',
-//         period: "February - May'22",
-//         details:
-//           'Collaborated with cross-functional teams to prototype a B2B insurance tech product. Delivered wireframes and usability feedback loops that enhanced navigation flow and improved stakeholder engagement during product demos.',
-//       },
-//     ],
-//     projects: [
-//       '🪒 HydraTrim - Smart grooming innovation (L\'Oreal Brandstorm)',
-//       '🩹 EasePatch - Wearable drug delivery (Sanofi Challenge)',
-//       '🖌️ Figma Research - Mental models & schema analysis',
-//       '💼 LinkedIn Analysis - Pre-attentive perception study',
-//       '🚘 Lyft Study - Cognitive load & emotional design',
-//       '🚆 MBTA Research - Metacognitive wayfinding',
-//       '💻 AlexOS 95 - Retro portfolio with modern UX',
-//     ],
-//     skills: {
-//       research: ['User Interviews', 'Usability Testing', 'Cognitive Analysis', 'Heuristic Evaluation'],
-//       design: ['Figma', 'Adobe XD', 'Prototyping', 'Visual Design', 'Information Architecture'],
-//       data: ['Python', 'R', 'SPSS', 'Excel', 'Qualitative Coding'],
-//       development: ['React', 'TypeScript', 'HTML/CSS', 'Git', 'Vite'],
-//       collaboration: ['Agile', 'Product Strategy', 'Stakeholder Management', 'Design Systems'],
-//     },
-//     achievements: [
-//       '🏆 Merit Scholar – Bentley University',
-//       '🎓 Ruth Marie & Align Scholarships – Northeastern University',
-//       '⭐ UXPA Member',
-//       '🏅 Cum Laude Graduate – UMass Lowell',
-//       '📜 Dean\'s List – Multiple Semesters',
-//       '🎖️ National Honors: Pi Sigma Alpha (National Political Science Honors Society), Pi Delta Phi (National French Honors Society)',
-//       '💰 Dean Nina Coppens Endowed Scholarship Fund – UMass Lowell (Sep 2017)',
-//       '💰 Charles E. Goodell Endowed Scholarship Fund – UMass Lowell (Sep 2016)',
-//     ],
-//   };
-
-//   return (
-//     <div className={styles.homeContainer}>
-//       {/* 🖥️ Hero Section */}
-//       <div className={styles.hero}>
-//         <div className={styles.heroWindow}>
-//           <div className={styles.windowTitleBar}>
-//             <span className={styles.windowTitle}>💻 welcome.exe</span>
-//             <div className={styles.windowControls}>
-//               <span>_</span>
-//               <span>□</span>
-//               <span>×</span>
-//             </div>
-//           </div>
-
-//           {/* ✅ Side-by-Side Intro Layout */}
-//           <div className={styles.heroContent}>
-//             <div className={styles.heroIntroRow}>
-//               {/* Profile */}
-//               <div className={styles.profileFrame}>
-//                 <img
-//                   src="/assets/images/profile.jpg"
-//                   alt="Alex"
-//                   className={styles.profileImage}
-//                 />
-//               </div>
-
-//               {/* Text */}
-//               <div className={styles.introText}>
-//                 <h1 className={styles.heroTitle}>
-//                   <span className={styles.glitch}>Hi, I'm Alex</span>
-//                 </h1>
-//                 <p className={styles.heroSubtitle}>
-//                   UX Researcher · Product Designer · Human Factors Specialist
-//                 </p>
-//                 <p className={styles.heroDescription}>
-//                   I'm a tech-driven problem solver passionate about leveraging AI, data, and human-centered design to create impactful solutions. With a Master's in Computer Science (focusing on data science and human-centered AI) from Northeastern University and currently pursuing a dual MBA/MS in Human Factors in Information Design at Bentley University, I approach innovation from both technical and human perspectives.
-//                 </p>
-//                 <p className={styles.heroDescription}>
-//                   My experience spans building dashboards and automated workflows that improved data accuracy and efficiency by 20%, designing Python and SQL pipelines for enterprise reporting, and translating complex data into actionable insights that help teams act quickly and confidently.
-//                 </p>
-
-//                 {/* Buttons */}
-//                 <div className={styles.heroButtons}>
-//                   <Link to="/portfolio" className={styles.primaryButton}>
-//                     View Portfolio →
-//                   </Link>
-//                   <Link to="/contact" className={styles.secondaryButton}>
-//                     Get in Touch
-//                   </Link>
-//                   <a
-//                     href="/pdfs/Alex_chea_resume.pdf"
-//                     target="_blank"
-//                     rel="noopener noreferrer"
-//                     className={styles.primaryButton}
-//                   >
-//                     View Resume
-//                   </a>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* 🧾 Resume Widget */}
-//       <div className={styles.resumeWidget}>
-//         <div className={styles.widgetTitleBar}>
-//           <span className={styles.widgetIcon}>📄</span>
-//           <span className={styles.widgetTitle}>resume.txt - Notepad</span>
-//           <div className={styles.windowControls}>
-//             <span>_</span>
-//             <span>□</span>
-//             <span>×</span>
-//           </div>
-//         </div>
-
-//         {/* Tabs */}
-//         <div className={styles.tabs}>
-//           {(['experience', 'projects', 'skills', 'achievements'] as const).map((tab) => (
-//             <button
-//               key={tab}
-//               className={`${styles.tab} ${activeTab === tab ? styles.activeTab : ''}`}
-//               onClick={() => setActiveTab(tab)}
-//             >
-//               {tab === 'experience' && '💼'}
-//               {tab === 'projects' && '🚀'}
-//               {tab === 'skills' && '⚡'}
-//               {tab === 'achievements' && '🏆'}
-//               <span>{tab.charAt(0).toUpperCase() + tab.slice(1)}</span>
-//             </button>
-//           ))}
-//         </div>
-
-//         {/* Content */}
-//         <div className={styles.widgetContent}>
-//           {activeTab === 'experience' && (
-//             <div className={styles.experienceList}>
-//               {resumeData.experience.map((exp, idx) => (
-//                 <div key={idx} className={styles.experienceItem}>
-//                   <h3>{exp.role}</h3>
-//                   <p className={styles.company}>{exp.company} · {exp.period}</p>
-//                   <p className={styles.details}>{exp.details}</p>
-//                 </div>
-//               ))}
-//             </div>
-//           )}
-
-//           {activeTab === 'projects' && (
-//             <ul className={styles.projectList}>
-//               {resumeData.projects.map((project, idx) => (
-//                 <li key={idx}>{project}</li>
-//               ))}
-//             </ul>
-//           )}
-
-//           {activeTab === 'skills' && (
-//             <div className={styles.skillsGrid}>
-//               {Object.entries(resumeData.skills).map(([category, skills]) => (
-//                 <div key={category} className={styles.skillCategory}>
-//                   <h4>{category.charAt(0).toUpperCase() + category.slice(1)}</h4>
-//                   <div className={styles.skillTags}>
-//                     {skills.map((skill, idx) => (
-//                       <span key={idx} className={styles.skillTag}>{skill}</span>
-//                     ))}
-//                   </div>
-//                 </div>
-//               ))}
-//             </div>
-//           )}
-
-//           {activeTab === 'achievements' && (
-//             <ul className={styles.achievementList}>
-//               {resumeData.achievements.map((achievement, idx) => (
-//                 <li key={idx}>{achievement}</li>
-//               ))}
-//             </ul>
-//           )}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Home;
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import styles from '../styles/Home.module.css';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import styles from "../styles/Home.module.css";
 
 const Home: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'experience' | 'projects' | 'skills' | 'achievements'>('experience');
+  const [activeTab, setActiveTab] = useState<
+    "experience" | "projects" | "skills" | "achievements"
+  >("experience");
 
   const resumeData = {
     experience: [
       {
-        role: 'Digital Content & Analytics Intern',
-        company: 'Bentley University – University Communication Advancement',
-        period: "August'25 - Present",
+        role: "Student Intern, Division for Family Health Data & Analytics",
+        company: "Massachusetts Department of Public Health",
+        period: "February'26 - June'26",
         details:
-          'Designing analytics dashboards and automating content reporting to support digital engagement strategies. Collaborating with marketing and IT teams to track KPIs and optimize university-wide communications using Power BI and SQL.',
+          "Designed a REDCap-based workflow supporting six public health programs by translating stakeholder needs into structured intake, ownership, validation, and delivery processes. Evaluated workflow bottlenecks, defined lifecycle states and validation controls, and documented implementation requirements to improve consistency and traceability across teams.",
       },
       {
-        role: 'Data Analyst Intern',
-        company: 'Bentley University – University Communication Advancement',
-        period: "June - August'25",
+        role: "Digital Content & Analytics Intern",
+        company: "Bentley University: University Communications & Marketing",
+        period: "August'25 - May'26",
         details:
-          'Developed interactive Power BI dashboards and performed exploratory data analysis on campaign engagement metrics. Identified trends that informed new content strategies, improving reach and conversion rates by 15%.',
+          "Analyzed digital product and campaign performance using Excel and Power BI to identify engagement trends, performance gaps, and opportunities for improvement. Combined quantitative findings with qualitative feedback to develop recommendations that supported stakeholder decision-making and digital communication strategy.",
       },
       {
-        role: 'Data Engineer Freelance Consultant',
-        company: 'UCare Pharmacy',
-        period: "June'23 - August'22",
+        role: "Accounting Research Assistant",
+        company: "Bentley University",
+        period: "November'25 - February'26",
         details:
-          'Built Python-based data pipelines for customer analytics and pharmacy operations. Automated reporting workflows to improve data accuracy and delivery speed by 20%, supporting better decision-making and patient care insights.',
+          "Developed a GitHub API data pipeline that processed more than 3 million records for accounting research. Built multi-stage matching, validation, and documentation workflows to improve data quality, reduce manual review, and support scalable downstream analysis.",
       },
       {
-        role: 'UX Freelance Consultant',
-        company: 'Dawn Café',
-        period: "February - July'22",
+        role: "Data Engineer, Contract",
+        company: "UCare Pharmacy",
+        period: "June'23 - August'24",
         details:
-          'Led UX redesign for a local café s digital ordering system. Conducted user interviews and usability tests to identify friction points, resulting in a 25% improvement in task completion time and higher customer satisfaction.',
+          "Built and automated Python-based reporting workflows for pharmacy operations, reducing manual effort by approximately 40%. Investigated recurring data discrepancies through stakeholder requirements, monitoring, and root-cause analysis while strengthening validation controls and reporting reliability.",
       },
       {
-        role: 'Student Recruitment Ambassador',
-        company: 'Northeastern University - Khoury College of Computer Sciences',
+        role: "UX Consultant, Contract",
+        company: "Dawn Café",
+        period: "February'23 - July'23",
+        details:
+          "Evaluated the digital ordering and onboarding experience through structured interviews and workflow walkthroughs, identifying eight usability issues across three customer journeys. Translated those findings into mobile experience improvements associated with 20% higher engagement and 15% growth in online orders.",
+      },
+      {
+        role: "Student Recruitment Ambassador",
+        company:
+          "Northeastern University – Khoury College of Computer Sciences",
         period: "April'21 - August'22",
         details:
-          'Supported prospective students through one-on-one sessions and campus tours. Shared insights about the Align program and promoted diversity in computing by mentoring new entrants from non-technical backgrounds.',
+          "Supported prospective students through one-on-one conversations, program presentations, and admissions-related outreach. Helped applicants understand the Align program, graduate computer science pathways, and the transition into computing from non-technical academic backgrounds.",
       },
       {
-        role: 'UX Designer Extern',
-        company: 'Innsure, Inc.',
-        period: "February - May'22",
+        role: "UX Designer Extern",
+        company: "Innsure, Inc.",
+        period: "February'22 - May'22",
         details:
-          'Collaborated with cross-functional teams to prototype a B2B insurance tech product. Delivered wireframes and usability feedback loops that enhanced navigation flow and improved stakeholder engagement during product demos.',
+          "Designed high-fidelity Figma prototypes for climate-risk analysts as part of a four-person design team. Used customer journey mapping, human-centered design, and usability testing to translate user needs into interface concepts for specialized insurance and climate-risk workflows.",
       },
     ],
     projects: [
-      { text: 'HydraTrim - Smart grooming innovation (L\'Oreal Brandstorm)', icon: 'bi-moisture' },
-      { text: 'EasePatch - Wearable drug delivery (Sanofi Challenge)', icon: 'bi-bandaid' },
-      { text: 'Figma Research - Mental models & schema analysis', icon: 'bi-brush' },
-      { text: 'LinkedIn Analysis - Pre-attentive perception study', icon: 'bi-briefcase' },
-      { text: 'Lyft Study - Cognitive load & emotional design', icon: 'bi-car-front' },
-      { text: 'MBTA Research - Metacognitive wayfinding', icon: 'bi-train-front' },
-      { text: 'AlexOS 95 - Retro portfolio with modern UX', icon: 'bi-laptop' },
+      {
+        text: "Healthcare AI - Comprehension, trust & human-centered AI research",
+        icon: "bi-heart-pulse",
+      },
+      {
+        text: "Whisk & Whisper - Voice-enabled AI product experience",
+        icon: "bi-mic",
+      },
+      {
+        text: "Welch's AI Adoption - Enterprise workflow & adoption research",
+        icon: "bi-diagram-3",
+      },
+      {
+        text: "EasePatch - Wearable drug delivery concept (Sanofi Challenge)",
+        icon: "bi-bandaid",
+      },
+      {
+        text: "HydraTrim - AI-enabled smart grooming concept (L'Oréal Brandstorm)",
+        icon: "bi-moisture",
+      },
+      {
+        text: "Zero Waste - Behavioral UX research & A/B testing",
+        icon: "bi-recycle",
+      },
+      {
+        text: "AlexOS 95 - Retro-inspired portfolio with modern UX",
+        icon: "bi-laptop",
+      },
     ],
     skills: {
-      research: ['User Interviews', 'Usability Testing', 'Cognitive Analysis', 'Heuristic Evaluation'],
-      design: ['Figma', 'Adobe XD', 'Prototyping', 'Visual Design', 'Information Architecture'],
-      data: ['Python', 'R', 'SPSS', 'Excel', 'Qualitative Coding'],
-      development: ['React', 'TypeScript', 'HTML/CSS', 'Git', 'Vite'],
-      collaboration: ['Agile', 'Product Strategy', 'Stakeholder Management', 'Design Systems'],
+      research: [
+        "User Research",
+        "Usability Testing",
+        "Stakeholder Interviews",
+        "Mixed-Methods Research",
+        "Research Synthesis",
+        "User Journey Mapping",
+        "Workflow Walkthroughs",
+        "A/B Testing",
+      ],
+      design: [
+        "Figma",
+        "High-Fidelity Prototyping",
+        "Wireframing",
+        "Interaction Design",
+        "Information Architecture",
+        "User Flows",
+        "Human-Centered Design",
+        "Systems Thinking",
+      ],
+      data: [
+        "Python",
+        "SQL",
+        "Excel",
+        "Power BI",
+        "Google Analytics",
+        "Data Visualization",
+        "Behavioral Analytics",
+        "Data Validation",
+      ],
+      development: [
+        "React",
+        "TypeScript",
+        "JavaScript",
+        "HTML/CSS",
+        "Node.js",
+        "Git/GitHub",
+        "APIs",
+        "Vite",
+      ],
+      collaboration: [
+        "Agile Development",
+        "Product Management",
+        "Requirements Gathering",
+        "Workflow Mapping",
+        "Backlog Prioritization",
+        "Stakeholder Collaboration",
+        "Cross-Functional Collaboration",
+        "Research Documentation",
+      ],
     },
     achievements: [
-      { text: 'Merit Scholar – Bentley University', icon: 'bi-trophy' },
-      { text: 'Ruth Marie & Align Scholarships – Northeastern University', icon: 'bi-mortarboard' },
-      { text: 'UXPA Member', icon: 'bi-star' },
-      { text: 'Cum Laude Graduate – UMass Lowell', icon: 'bi-award' },
-      { text: 'Dean\'s List – Multiple Semesters', icon: 'bi-journal-text' },
-      { text: 'National Honors: Pi Sigma Alpha (National Political Science Honors Society), Pi Delta Phi (National French Honors Society)', icon: 'bi-patch-check' },
-      { text: 'Dean Nina Coppens Endowed Scholarship Fund – UMass Lowell (Sep 2017)', icon: 'bi-cash' },
-      { text: 'Charles E. Goodell Endowed Scholarship Fund – UMass Lowell (Sep 2016)', icon: 'bi-cash' },
+      { text: "Merit Scholar – Bentley University", icon: "bi-trophy" },
+      {
+        text: "Ruth Marie & Align Scholarships – Northeastern University",
+        icon: "bi-mortarboard",
+      },
+      { text: "UXPA Member", icon: "bi-star" },
+      { text: "Cum Laude Graduate – UMass Lowell", icon: "bi-award" },
+      { text: "Dean's List – Multiple Semesters", icon: "bi-journal-text" },
+      {
+        text: "National Honors: Pi Sigma Alpha (National Political Science Honors Society), Pi Delta Phi (National French Honors Society)",
+        icon: "bi-patch-check",
+      },
+      {
+        text: "Dean Nina Coppens Endowed Scholarship Fund – UMass Lowell (Sep 2017)",
+        icon: "bi-cash",
+      },
+      {
+        text: "Charles E. Goodell Endowed Scholarship Fund – UMass Lowell (Sep 2016)",
+        icon: "bi-cash",
+      },
     ],
   };
 
@@ -336,24 +200,41 @@ const Home: React.FC = () => {
                   <span className={styles.glitch}>Hi, I'm Alex</span>
                 </h1>
                 <p className={styles.heroSubtitle}>
-                  UX Researcher · Product Designer · Human Factors Specialist
+                  Product Designer · UX Researcher · Human Factors Specialist
                 </p>
+
                 <p className={styles.heroDescription}>
-                  I'm a tech-driven problem solver passionate about leveraging
-                  AI, data, and human-centered design to create impactful
-                  solutions. With a Master's in Computer Science (focusing on
-                  data science and human-centered AI) from Northeastern
-                  University and currently pursuing a dual MBA/MS in Human
-                  Factors in Information Design at Bentley University, I
-                  approach innovation from both technical and human
-                  perspectives.
+                  I&apos;m a product designer and UX researcher who works at the
+                  intersection of human-centered design, technology, and data. I
+                  hold a Master&apos;s in Computer Science from Northeastern
+                  University, with a focus on data science, machine learning,
+                  and human-centered AI, and I&apos;m currently pursuing an MBA
+                  and MS in Human Factors in Information Design at Bentley
+                  University. This combination helps me approach product
+                  problems from both the human and technical sides, from
+                  understanding user behavior to evaluating feasibility and
+                  business impact.
                 </p>
+
                 <p className={styles.heroDescription}>
-                  My experience spans building dashboards and automated
-                  workflows that improved data accuracy and efficiency by 20%,
-                  designing Python and SQL pipelines for enterprise reporting,
-                  and translating complex data into actionable insights that
-                  help teams act quickly and confidently.
+                  My work spans healthcare, AI-enabled products, digital
+                  experiences, and analytics. I&apos;ve conducted user research
+                  and usability studies, mapped complex workflows, designed and
+                  tested interactive prototypes, built data pipelines processing
+                  more than 3 million records, and automated reporting workflows
+                  that reduced manual effort by approximately 40%. Across these
+                  projects, I focus on turning complex user and stakeholder
+                  needs into clearer experiences, better product decisions, and
+                  measurable improvements.
+                </p>
+
+                <p className={styles.heroDescription}>
+                  I&apos;m especially interested in products where technology
+                  has to work well for real people, particularly in healthcare,
+                  AI, and other complex systems. My approach combines research,
+                  systems thinking, prototyping, analytics, and technical
+                  collaboration to understand the problem before deciding what
+                  should be built.
                 </p>
 
                 {/* Buttons */}
