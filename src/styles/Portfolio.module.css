@@ -6,31 +6,38 @@
   animation: fadeIn 0.8s ease-in-out;
 }
 
-/* Header */
+/* ===============================
+   Header
+   =============================== */
+
 .header {
   text-align: center;
   margin-bottom: 3.5rem;
+  padding: 1rem 0;
 }
 
 .title {
   font-size: 3rem;
-  /* ↑ from 2.5rem */
-  color: #214F4B;
+  color: #F7F4EA;
   margin-bottom: 0.6rem;
   letter-spacing: 2px;
-  font-family: 'VT323', monospace;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.25);
 }
 
 .subtitle {
   font-size: 1.2rem;
-  /* ↑ */
-  color: #235789;
-  font-family: 'VT323', monospace;
+  color: #DCEBEE;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin-bottom: 2rem;
+  letter-spacing: 0.5px;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.18);
 }
 
+/* ===============================
+   Project Grid
+   =============================== */
 
-/* Project Grid */
 .projectGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -45,7 +52,10 @@
   display: block;
 }
 
-/* Project Card */
+/* ===============================
+   Project Card
+   =============================== */
+
 .projectCard {
   background: rgba(255, 255, 255, 0.95);
   border: 3px solid;
@@ -66,68 +76,82 @@
   background: rgba(255, 255, 255, 1);
 }
 
+.projectCard:focus-visible {
+  outline: 3px solid #F7F4EA;
+  outline-offset: 5px;
+}
+
 .projectCard.active {
   background: linear-gradient(135deg, #D9B888 0%, #D7B377 100%);
   border-color: #214F4B;
 }
 
-/* Card Header */
+/* ===============================
+   Card Header
+   =============================== */
+
 .cardHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
   margin-bottom: 1.2rem;
 }
 
 .icon {
   font-size: 2.5rem;
-  /* ↑ */
   color: #214F4B;
 }
 
 .year {
   font-size: 0.9rem;
-  /* ↑ */
   background: #214F4B;
   color: #FFFFFF;
   padding: 0.4rem 0.7rem;
-  font-family: 'VT323', monospace;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   border-radius: 2px;
+  white-space: nowrap;
 }
 
-/* Project Content */
+/* ===============================
+   Project Content
+   =============================== */
+
 .projectTitle {
   font-size: 1.5rem;
-  /* ↑ from 1.2rem */
   color: #214F4B;
+  margin-top: 0;
   margin-bottom: 0.6rem;
-  font-family: 'VT323', monospace;
-  line-height: 1.4;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.3;
 }
 
 .role {
   font-size: 1.1rem;
-  /* ↑ */
   color: #235789;
-  font-family: 'VT323', monospace;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 0;
   margin-bottom: 1rem;
   font-style: italic;
+}
+
+.brief {
+  font-size: 1rem;
+  color: #333333;
+  line-height: 1.6;
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .expandedContent {
   animation: slideDown 0.3s ease;
 }
 
-.brief {
-  font-size: 1rem;
-  /* ↑ */
-  color: #333333;
-  line-height: 1.8;
-  margin-bottom: 1.2rem;
-  font-family: 'VT323', monospace;
-}
+/* ===============================
+   Tags
+   =============================== */
 
-/* Tags & Tech Stack */
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -141,11 +165,14 @@
   color: #FFFFFF;
   padding: 0.5rem 0.9rem;
   font-size: 0.9rem;
-  /* ↑ */
-  font-family: 'VT323', monospace;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   border-radius: 2px;
   border: 1px solid #333333;
 }
+
+/* ===============================
+   Tech Stack
+   =============================== */
 
 .techStack {
   display: flex;
@@ -153,8 +180,7 @@
   gap: 0.6rem;
   margin-bottom: 1.2rem;
   font-size: 1rem;
-  /* ↑ */
-  font-family: 'VT323', monospace;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #214F4B;
 }
 
@@ -174,19 +200,67 @@
   font-size: 0.9rem;
 }
 
-/* Footer */
+/* ===============================
+   View More Button
+   =============================== */
+
+.viewMoreContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.viewMoreButton {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.2rem;
+  background: #C0C0C0;
+  color: #111111;
+
+  border: 3px solid;
+  border-color: #FFFFFF #000000 #000000 #FFFFFF;
+
+  padding: 10px 22px;
+  cursor: pointer;
+
+  transition: all 0.15s ease;
+
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.25);
+}
+
+.viewMoreButton:hover {
+  background: #DCDCDC;
+}
+
+.viewMoreButton:active {
+  border-color: #000000 #FFFFFF #FFFFFF #000000;
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+.viewMoreButton:focus-visible {
+  outline: 3px solid #F7F4EA;
+  outline-offset: 4px;
+}
+
+/* ===============================
+   Footer
+   =============================== */
+
 .footer {
   text-align: center;
   padding: 2rem;
-  background: linear-gradient(135deg, #ADD9F4 0%, #ADD9F4 100%);
+  background: #ADD9F4;
   border: 2px solid #214F4B;
-  font-family: 'VT323', monospace;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #214F4B;
   font-size: 1.1rem;
-  /* ↑ */
 }
 
-/* Animations */
+/* ===============================
+   Animations
+   =============================== */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -209,7 +283,10 @@
   }
 }
 
-/* Responsive */
+/* ===============================
+   Responsive
+   =============================== */
+
 @media (max-width: 1024px) {
   .portfolioContainer {
     padding: 2.5rem 1.5rem;
@@ -233,13 +310,22 @@
     padding: 2rem 1rem;
   }
 
-  .projectGrid {
-    grid-template-columns: 1fr;
-    gap: 1.2rem;
+  .header {
+    margin-bottom: 2.5rem;
   }
 
   .title {
     font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+
+  .projectGrid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
   }
 
   .projectCard {
@@ -257,8 +343,16 @@
     padding: 1.5rem 1rem;
   }
 
+  .header {
+    margin-bottom: 2rem;
+  }
+
   .title {
     font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
   }
 
   .projectCard {
@@ -281,168 +375,202 @@
 
 /* ===============================
    Windows 95 Project Window
+   Restored: required by Portfolio.tsx
    =============================== */
 
 .desktopWindow {
   position: fixed;
-  top: 90px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 900px;
-  height: 600px;
+  width: min(720px, calc(100vw - 32px));
+  height: min(500px, calc(100vh - 56px));
+  min-width: 320px;
+  min-height: 240px;
 
   background: #C0C0C0;
+
   border: 3px solid;
   border-color: #FFFFFF #000000 #000000 #FFFFFF;
 
-  box-shadow: 6px 6px 0 rgba(0,0,0,0.35);
-  z-index: 9999;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.35);
 
   display: flex;
   flex-direction: column;
-}
 
-.windowHeader {
-  background: linear-gradient(90deg, #000080, #235789);
-  color: white;
-
-  padding: 6px 10px;
-  font-family: 'VT323', monospace;
-  font-size: 1.1rem;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  border-bottom: 2px solid #000;
-}
-
-.windowClose {
-  background: #C0C0C0;
-  border: 2px solid;
-  border-color: #FFFFFF #000000 #000000 #FFFFFF;
-
-  font-family: 'VT323', monospace;
-  font-size: 1rem;
-
-  padding: 2px 8px;
-  cursor: pointer;
-}
-
-.windowClose:hover {
-  background: #E0E0E0;
-}
-
-.windowContent {
-  flex: 1;
-  background: white;
   overflow: hidden;
 }
 
-.projectFrame {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* WINDOWS */
-
-.desktopWindow {
-  position: fixed;
-  width: 720px;
-  height: 500px;
-  background: #C0C0C0;
-  border: 3px solid;
-  border-color: #FFFFFF #000000 #000000 #FFFFFF;
-  display: flex;
-  flex-direction: column;
-}
-
 .windowHeader {
+  flex: 0 0 auto;
+
   background: linear-gradient(90deg, #000080, #235789);
-  color: white;
-  padding: 6px 10px;
-  font-family: 'VT323', monospace;
+  color: #FFFFFF;
+
+  padding: 6px 8px;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.15rem;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 0.75rem;
+
+  border-bottom: 2px solid #000000;
+
+  cursor: move;
+  user-select: none;
+}
+
+.windowHeader > span {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.windowButtons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
 }
 
 .windowButtons button {
-  margin-left: 6px;
+  min-width: 28px;
+  height: 24px;
+
+  margin: 0;
+  padding: 1px 6px;
+
   background: #C0C0C0;
+  color: #000000;
+
   border: 2px solid;
   border-color: #FFFFFF #000000 #000000 #FFFFFF;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  line-height: 1;
+
   cursor: pointer;
-  padding: 2px 8px;
+}
+
+.windowButtons button:hover {
+  background: #E0E0E0;
+}
+
+.windowButtons button:active {
+  border-color: #000000 #FFFFFF #FFFFFF #000000;
 }
 
 .projectFrame {
+  display: block;
+  flex: 1 1 auto;
+  min-height: 0;
   width: 100%;
   height: 100%;
-  border: none;
-}
-
-/* TASKBAR */
-
-.taskbar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 40px;
-  background: #C0C0C0;
-  border-top: 2px solid #000;
-  display: flex;
-  align-items: center;
-  padding: 4px;
-  gap: 6px;
-}
-
-.taskbarItem {
-  background: #E0E0E0;
-  border: 2px solid;
-  border-color: #FFFFFF #000000 #000000 #FFFFFF;
-  padding: 4px 10px;
-  font-family: 'VT323', monospace;
-  cursor: pointer;
+  border: 0;
+  background: #FFFFFF;
 }
 
 /* ===============================
-   Featured / View More Button
+   Windows 95 Taskbar
    =============================== */
 
-.viewMoreContainer {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
+.taskbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
 
-.viewMoreButton {
-  font-family: 'VT323', monospace;
-  font-size: 1.2rem;
+  min-height: 40px;
+  padding: 4px;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
 
   background: #C0C0C0;
 
-  border: 3px solid;
+  border-top: 2px solid #FFFFFF;
+  box-shadow: 0 -2px 0 #808080;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  z-index: 10000;
+}
+
+.taskbarItem {
+  max-width: 240px;
+
+  padding: 4px 10px;
+
+  background: #E0E0E0;
+  color: #000000;
+
+  border: 2px solid;
   border-color: #FFFFFF #000000 #000000 #FFFFFF;
 
-  padding: 10px 22px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   cursor: pointer;
-
-  transition: all 0.15s ease;
-
-  box-shadow: 3px 3px 0 rgba(0,0,0,0.25);
 }
 
-.viewMoreButton:hover {
-  background: #DCDCDC;
+.taskbarItem:hover {
+  background: #FFFFFF;
 }
 
-.viewMoreButton:active {
+.taskbarItem:active {
   border-color: #000000 #FFFFFF #FFFFFF #000000;
-  transform: translate(2px, 2px);
-  box-shadow: none;
 }
+
+/* Window responsiveness */
+@media (max-width: 768px) {
+  .desktopWindow {
+    width: calc(100vw - 20px);
+    height: calc(100vh - 58px);
+    min-width: 0;
+    min-height: 0;
+  }
+
+  .windowHeader {
+    font-size: 1.05rem;
+  }
+
+  .taskbarItem {
+    max-width: 170px;
+  }
+}
+
+@media (max-width: 480px) {
+  .desktopWindow {
+    width: calc(100vw - 10px);
+    height: calc(100vh - 54px);
+  }
+
+  .windowHeader {
+    padding: 5px 6px;
+    font-size: 1rem;
+  }
+
+  .windowButtons button {
+    min-width: 26px;
+    height: 22px;
+    padding: 1px 5px;
+  }
+
+  .taskbar {
+    min-height: 36px;
+  }
+
+  .taskbarItem {
+    max-width: 140px;
+    font-size: 0.9rem;
+  }
+}
+
